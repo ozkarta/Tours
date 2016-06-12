@@ -1,0 +1,23 @@
+<div class="album-galery-margin">
+</div>
+
+<div class="container">
+        <div id="lightgallery">
+            <%
+                if (locals.user!==undefined){
+                    locals.user.screener.galery.forEach(function(item){
+                    console.dir(item);
+                        %>
+                             <a href="<%=item.imageURL%>">
+                                <img class="col-xs-6 col-md-2 col-sm-3 img-responsive" src="<%=item.imageURL%>" />
+                            </a>
+                        <%
+                    })
+                }
+            %>
+
+
+           
+           
+        </div>
+    </div>

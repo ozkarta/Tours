@@ -1,0 +1,137 @@
+<%
+
+function getHardCode(varName){
+   if(locals.user!==undefined){
+        for(i in  locals.user.screener.hardCodes){
+        var item=locals.user.screener.hardCodes[i];
+            if(item.variableName==varName){
+                //console.dir(item);
+                console.log('looking for '+locals.user.defaultLanguage)
+                if(locals.user.defaultLanguage==='ქართული'){
+                    console.log('found  kartulshi')
+                    console.log(item.geoValue);
+                    return item.geoValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='English'){
+                    console.log('found  inglisurshi');
+                    return item.engValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='русский'){
+                    console.log('found rusulshi');
+                    return item.rusValue
+                    
+                }
+            }
+        }
+   }else{
+    return '';
+   }
+   
+}
+
+
+%>
+
+
+<div class="tour-details-background" style='background-image: url("<%=locals.user.screener.tours[0].mainImageURL %>")'>
+</div>
+
+
+<%  console.dir(locals.user.screener);
+
+    if(locals.user!==undefined){
+        if(locals.user.screener.tourDetailID!=='' & locals.user.screener.tourDetailID!==undefined){
+            console.dir(locals.user.screener.tours);
+            locals.user.screener.tours.forEach(function(tour){
+            //console.dir(tour);
+            //console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+                if(tour.tourID==locals.user.screener.tourDetailID){
+                    //console.log('__________tour was found');
+
+
+                %>
+
+                <div class="tour-details">
+                    <div class="container">
+                        <div class="thumbnail col-xs-12 details-thumbnail">
+                            <img class="tour-img col-xs-5 col-md-3" src="<%=tour.descriptionImageURL %>">
+                            <div class="caption about">
+                                <h3><%=tour.tourName %></h3>
+                                <p><span class="bolderer"></span> 
+                                    <%=tour.aboutPlaceShort %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about-tour">
+                            <div class="simple-details col-sm-5 col-xs-12">
+                                <h4><%=tour.tourDetailShortHeaderName %></h4>
+                                <%=tour.tourDetailShort %>
+
+                                <%
+                                    if (tour.galery!==undefined){
+                                %>
+                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span>ფოტო ალბომი</h3>
+                                <div class="album-in-tour-details col-xs-12">
+                                    <a href="galeryDetail?galeryID=<%=tour.galery.galeryID%>">
+                                        <div class="col-sm-9 col-sm-offset-1 min-size det-alb-backg">
+                                            <img src="<%=tour.galery.imageURL %>" alt="..." class="img-thumbnail">
+                                            <h4 class="album-title col-xs-12 text-center"><%=tour.tourName%></h4>
+                                        </div>
+                                    </a>
+                                </div>
+                                <%}%>
+                            </div>
+                            <div class="main-details col-sm-7 col-xs-12">
+                                <h4><%=tour.tourDetailLongHeaderName %></h4>
+                               
+                                <%=tour.tourDetailLong %>
+                            </div>
+                        </div>
+                        <h3 class="book col-xs-12"><%=getHardCode('@bookTheTour')%></h3>
+                        <div class='trip-form col-xs-12'>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@fname')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@fname')%>">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@lname')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@lname')%>">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@birthDate')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate')%>">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@idNumber')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber')%>">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@mail')%></label>
+                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail')%>">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@cellNumber')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber')%>">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-success success submitForm"><%=getHardCode('@book')%></button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+
+            <%
+                }
+            });
+        }
+    }
+%>
+
+
+
+
+
