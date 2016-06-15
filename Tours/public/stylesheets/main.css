@@ -69,7 +69,7 @@
 .navbar,
 .navbar-default {
     /*padding: 15px;*/
-    position: absolute;
+    background-color: #bdb;
     z-index: 1;
     width: inherit;
     height: inherit;
@@ -111,6 +111,28 @@
     border: 14px solid gray;
 }
 
+.tour-thumbnail img{
+    height: 35vh;
+}
+
+@media only screen and (max-width: 770px) {
+    .tour-thumbnail img{
+    height: 65vh;
+}
+
+}
+
+
+.trip-thumbnail img{
+    height: 35vh;
+}
+
+@media only screen and (max-width: 770px) {
+    .trip-thumbnail img{
+    height: 65vh;
+}
+
+}
 .owl-carousel {
     position: relative;
 }
@@ -134,7 +156,7 @@
     position: relative;
 }
 
-.tour-thumbnail::before {
+/*.tour-thumbnail::before {
     content: ' ';
     position: absolute;
     top: 0;
@@ -157,7 +179,7 @@
 .tour-thumbnail:hover .tour-caption-title {
     -webkit-transform: translateY(0);
     transform: translateY(0);
-}
+}*/
 
 @media only screen and (max-width: 550px) {
     .tour-thumbnail .tour-caption-text {
