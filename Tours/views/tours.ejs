@@ -47,6 +47,12 @@ function getHardCode(varName){
                 <% //console.dir(locals.user.tour);
                  if(locals.user!==undefined){
                         //console.dir(locals.user.screener.tours);
+                        var minLength=10000;
+                        locals.user.screener.tours.forEach(function(tour){
+                            if(tour.aboutPlaceShort.length<minLength){
+                                minLength=tour.aboutPlaceShort.length;
+                            }
+                        })
                         locals.user.screener.tours.forEach(function(tour){
                         //console.log('this is tour_________________-');
                         console.dir(tour);
@@ -55,9 +61,10 @@ function getHardCode(varName){
                                     <a href="tourDetails?tourId=<%=tour.tourID%>">
                                         <div class="thumbnail tours-thumbnail">
                                             <img class="pull-left" src="<%=tour.descriptionImageURL %>" alt="...">
-                                            <div class="caption">
+                                            <div class="caption simple-details ">
                                                 <h3><%=tour.tourName %></h3>
-                                                <p><%=tour.tourDescriptionShort %></p>
+                                                <p><%-tour.aboutPlaceShort.substring(0,minLength)+'...' %></p>
+                                                <br/><br/><br/>
                                                 <span class="price pull-right"><%=getHardCode('@price')%><%=tour.price%> <%=tour.priceCurrency %></span>
                                             </div>
                                         </div>

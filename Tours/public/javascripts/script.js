@@ -23,3 +23,9 @@ $(document).ready(function() {
 
     });
 });
+$(window).scroll(function(e) {
+        $('html, body').animate({
+            scrollTop: $('.container').eq(1).offset().top
+        }, 'slow');
+        $( this ).off(e);
+    });

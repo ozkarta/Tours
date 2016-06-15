@@ -242,6 +242,16 @@ function getHardCode(varName){
     $(document).ready(function() {
         $("#lightgallery").lightGallery();
     });
+
+            $(window).scroll(function(e) {
+        $('html, body').animate({
+            scrollTop: $('.container').eq(1).offset().top
+        }, 'slow');
+        $( this ).off(e);
+    });
+       
+       
+
     $(document).ready(function() {
     $('.clicked').on('click', function(e) {
         var current = $(e.target).next();

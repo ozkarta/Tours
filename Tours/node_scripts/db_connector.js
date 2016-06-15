@@ -9,7 +9,9 @@ var db_connector=function(){
 	db_connector.prototype.getTours=function(languageID,callback){
 		this.mongo.connect(this.url,function(err,db){
 					var toursCollection=db.collection('toursTable');
-					toursCollection.find({'languageID': ObjectId(languageID)}).toArray(function(err,docs){
+					toursCollection.find({'languageID': ObjectId(languageID)}).sort({'effDate':-1}).toArray(function(err,docs){
+						
+						console.log(docs.length);
 						callback(docs);
 					});
 				});
@@ -17,7 +19,7 @@ var db_connector=function(){
 	db_connector.prototype.getToursForMain=function(languageID,callback){
 		this.mongo.connect(this.url,function(err,db){
 					var toursCollection=db.collection('toursTable');
-					toursCollection.find({'languageID': ObjectId(languageID)}).sort({'effDate':-1}).limit(6).toArray(function(err,docs){
+					toursCollection.find({'languageID': ObjectId(languageID),'MainPageFlag':'Y'}).sort({'effDate':-1}).limit(6).toArray(function(err,docs){
 						//console.dir(docs);
 						callback(docs);
 					});

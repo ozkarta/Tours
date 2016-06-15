@@ -379,6 +379,237 @@ db.toursTable.insert({
 'MainPageFlag':'Y',
 'galeryID':galeryID,
 })
+//___________________________kakheti 2 dgiani____________________________________________
+db.toursTable.insert({	
+'tourID':a6,
+'languageID':geoID,
+'effDate':new Date(),
+'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
+'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
+'tourName':'კახეთი',
+'aboutPlaceShort':'კახეთი საქართველოს ერთ-ერთი უმშვენიერესი და მრავალფეროვანი მხარეა.კახეთი აღმოსავლეთ საქართველოს საზღვრისპირა რეგიონს წარმოადგენს.მას ჩრდილოეთიდან რუსეთის ფედერაცია ესაზღვრება, აღმოსავლეთიდან და სამხრეთიდან აზერბაიჯანი.ვინც კახეთში ერთხელ მაინც ყოფილა, მისთვის ეს მხარე მუდამ კარგ ღვინოსთან და გულღია მასპინძლობასთან ასოცირდება, რადგან კახეთი მევენახეობა-მეღვინეობით განთქმული მხარეა. აქ მრავალი ჯიშის ვაზი ხარობს და შესაბამისად მრავალფეროვანი მაღალხარისხიანი ღვინოებიც მზადდება.',
+'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილისი-წინანდალი-ყვარელი-თბილისი</p><h6>ტურის სახეობა: </h6><p> კულტურულi ,საეკლესიო</p><h6>კვება: </h6><p> ორჯერადი კვება</p><h6>განთავსება: </h6><p> დაბინავება სასტუმროში</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 დღე და 2 ღამე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
+'tourDetailShortHeaderName':'2 დღიანი ტური კახეთში',
+'tourDetailLong':'<ul><dt><p>1 დღე</p></dt><dd><p>1.წინანდალი</p></dd><dd><p>2.ძველი შუამთა</p></dd><dd><p>3.ახალი შუამთა</p></dd><dd><p>4. იყალთო</p></dd><dd><p>5.დაბინავება სასტუმროში</p></dd><dt><p>2 დღე</p></dt><dd><p>6.გრემი</p></dd><dd><p>7.ნეკრესი</p></dd><dd><p>8.ალავერდი</p></dd><dd><p>9.ყვარლის ტბა</p></dd><dd><p>10.ღვინის დეგუსტაცია</p></dd></ul>',
+'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a6,
+'languageID':engID,
+'effDate':new Date(),
+'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
+'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
+'tourName':'Kakheti',
+'aboutPlaceShort':'Kakheti is one of the most beautiful and diverse lands in Georgia.kakheti is a region along the eastern boundary of Georgia. It is bordered by the Russian Federation from the North and Azerbaijan from the East and South.Whoever has traveled to Kakheti even once in his life will always associate this province with good wine and welcoming hospitality – Kakheti is a land famous for viticulture and winemaking. Farmers grow many kinds of grapes here and are skilled at producing a wide variety of high-quality wines.',
+'tourDetailShort':'<h6>Routes: </h6><p> tbilisi-Tsinandali-Kvareli-tbilisi</p><h6>Tour Type: </h6><p> cultural,Monastery</p><h6>Food: </h6><p> two meals a day </p><h6>Placement: </h6><p> Overnight in a hotel for one night</p><h6>Duration: </h6><p>  1 night , 2 days </p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
+'tourDetailShortHeaderName':'2-Day tour in Kakheti ',
+'tourDetailLong':'<ul><dt><p>1 day</p></dt><dd><p>1 Tsinandali</p></dd><dd><p>2 Old Shuamta</p></dd><dd><p>3 new shuamta</p></dd><dd><p>4 Ikalto</p></dd><dd><p>5 Overnight.</p></dd><dt><p>2 day</p></dt><dd><p>1 Gremi </p></dd><dd><p>2 Nekresi</p></dd><dd><p>3 alaverdi</p></dd><dd><p>4 Kvareli Lake</p></dd><dd><p>5 Wine tasting</p></dd></ul>',
+'tourDetailLongHeaderName':'Tour Details',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a6,
+'languageID':rusID,
+'effDate':new Date(),
+'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
+'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
+'tourName':'Кахетия',
+'aboutPlaceShort':'Кахетия является одним из самых красивых и отличающихся мест в Грузии. Кахетия- это регион расположенный вдоль восточной границы. Он граничит с Российской Федерацией с Севера и с Азербайджаном с Востока и Юга. Любой кто посещал Кахетию хотя бы раз в жизни будет ассоциировать его с хорошим вином и гостеприимством . Кахетия - это земля знаменитая виноградством и виноделием.Фермеры растят здесь множество сортов винограда, которые используются специалистами в производстве широкого разнообразия вина высшего качества.',
+'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси-Цинандали-Кварели-Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> Двухразовое питание</p><h6>размещение: </h6><p> Остановка в  отеле на 1 ночь</p><h6>продолжительность: </h6><p> 1 ночи, 2 дня</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
+'tourDetailShortHeaderName':'Двухдневный тур по Кахетии',
+'tourDetailLong':'<ul><dt><p>День 1</p></dt><dd><p>1.Цинандали</p></dd><dd><p>2. Старая Шуамта</p></dd><dd><p>3. Новая Шуамта</p></dd><dd><p>4. Икалто</p></dd><dd><p>5. Ночевка в госнице</p></dd><dt><p>День 2</p></dt><dd><p>1 Греми</p></dd><dd><p>2. Некреси</p></dd><dd><p>3. Алаверди</p></dd><dd><p>4. Озеро Кварели</p></dd><dd><p>5. Дегустация вина</p></dd></ul>',
+'tourDetailLongHeaderName':'Oписание тура:',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+//_______________________________GORI___________________________________________________
+db.toursTable.insert({	
+'tourID':a7,
+'languageID':geoID,
+'effDate':new Date(),
+'mainImageURL':'images/website/goriMain.jpg',
+'descriptionImageURL':'images/website/goriDesc.jpg',
+'tourName':'გორი',
+'aboutPlaceShort':'გორი ერთ-ერთი უძველესი ქალაქია საქართველოში. სახელწოდება წარმოდგება ქალაქში აღმართული კლდოვანი გორაკისაგან, რომელზეც გაშენებულია ძველი ციხესიმაგრე.(გორის ციხე). გორის მთავარ ღირსშესანიშნაობათა შორისაა გორის ციხე, ისტორიულ-ეთნოგრაფიული მუზეუმი და ი. სტალინის სახლ-მუზეუმი. უფლისციხე, ატენის სიონი.',
+'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილის-კასპი-ქარელი-გორი-თბილისი</p><h6>ტურის სახეობა: </h6><p> კულტურულi ,საეკლესიო</p><h6>კვება: </h6><p> არა</p><h6>განთავსება: </h6><p> არა</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 დღე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
+'tourDetailShortHeaderName':'1 დღიანი ტური გორი',
+'tourDetailLong':'<p>1. სამთავისის მონასტერი</p><p>2. ყინწვისის მონასტერი</p><p>3.სტალინის სახლ-მუზეუმი</p><p>4.უფლისციხე</p><p>5. ატენის სიონი</p>',
+'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a7,
+'languageID':engID,
+'effDate':new Date(),
+'mainImageURL':'images/website/goriMain.jpg',
+'descriptionImageURL':'images/website/goriDesc.jpg',
+'tourName':'Gori',
+'aboutPlaceShort':'Gori is one of the oldest cities of Georgia. The name comes from Georgian gora, that is, ‘a hill’ located in the city. Gori houses several historical and cultural landmarks, including the Gori Fortress, which is built on a cliffy hill overlooking the central part of the modern city, the historic-ethnographic museum, and the museum of Joseph Stalin. ',
+'tourDetailShort':'<h6>Routes: </h6><p> Tbilisi-Kaspi-Qareli-Gori-tbilisi</p><h6>Tour Type: </h6><p> cultural,Monastery</p><h6>Food: </h6><p> No </p><h6>Placement: </h6><p> No</p><h6>Duration: </h6><p>  1  day </p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
+'tourDetailShortHeaderName':'one day tour in Gori',
+'tourDetailLong':'<p>1 samtavisi Monastery</p><p>2 yinwvisi blue Monastery</p><p>3 Joseph Stalin Museum</p><p>4 Uplistsikhe</p><p>5 Ateni Sioni Church</p>',
+'tourDetailLongHeaderName':'Tour Details',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a7,
+'languageID':rusID,
+'effDate':new Date(),
+'mainImageURL':'images/website/goriMain.jpg',
+'descriptionImageURL':'images/website/goriDesc.jpg',
+'tourName':'Гори',
+'aboutPlaceShort':'Гори один из древнейших городов Грузии. Среди главных достопримечательностей Гори можно выделить горийскую крепость, возвышающуюся на горе в самом центре города, историко-этнографический музей и дом-музей Сталина. Рядом с Гори так-же есть пещерный монастырь Уплисцихе и церковь Атенский Сион.',
+'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси-  Каспий  -Карели- Гори -Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> нет</p><h6>размещение: </h6><p> нет</p><h6>продолжительность: </h6><p> один день</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
+'tourDetailShortHeaderName':'Однодневный тур в  Гори',
+'tourDetailLong':'<p>1 Монастырь Самтависи</p><p>2 Синий Монастырь Кинцвиси</p><p>3 Музей Иосифа Сталина в Гори</p><p>4 Уплисцихе</p><p>5 Атени Сиони</p>',
+'tourDetailLongHeaderName':'Oписание тура:',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+//_______________________________________xevsureti______________________________________
+db.toursTable.insert({	
+'tourID':a8,
+'languageID':geoID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/xevsuretiDetail.jpg',
+'tourName':'ხევსურეთი',
+'aboutPlaceShort':'ხევსურეთი საქართველოს ისტორიულ-გეოგრაფიული მხარეა. იგი მდებარეობს აღმოსავლეთ საქართველოს მთიანეთში, კავკასიონის ქედის ჩრდილოეთ და სამხრეთ კალთებზე. კავკასიონის ქედი მას ორ ნაწილად ჰყოფს — პირიქითა და პირაქეთა ხევსურეთად. პირიქითა ხევსურეთი შედგება სამი ხეობისაგან: მიღმახევის, შატილის და არხოტის, პირაქეთა ხევსურეთი — არაგვის ხეობისაგან.',
+'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილისი - ბარისახო - გუდანი  - დათვიჯვრის უღელტეხილი - ლებაისკარი -კისტანი - შატილი -მუცო-არდოტი-თბილისი</p><h6>ტურის სახეობა: </h6><p> ეკო ტური,კულტურულ ,შემეცნებითი</p><h6>კვება: </h6><p> ორჯერადი კვება</p><h6>განთავსება: </h6><p> დაბინავება ოჯახურ სასტუმროში</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 ღამე , 2 დღე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
+'tourDetailShortHeaderName':'2 დღიანი ტური ხევსურეთი',
+'tourDetailLong':'<ul><dt><p>1 დღე</p></dt><dd><p>1.ბარისახო</p></dd><dd><p>2.გუდანი</p></dd><dd><p>3.დათვიჯვრის უღელტეხილი </p></dd><dd><p>4 .ლებაისკარი</p></dd><dd><p>5.შატილი</p></dd><dd><p>6.დაბინავება ოჯახურ სასტუმროში</p></dd><dt><p>მე-2 დღე</p></dt><dd><p>1.ანატორის აკლდამები</p></dd><dd><p>2. მუცო</p></dd><dd><p>3.არდოტი </p></dd><dd><p>4. კორშა </p></dd></ul>',
+'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a8,
+'languageID':engID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/xevsuretiDetail.jpg',
+'tourName':'KHEVSURETI',
+'aboutPlaceShort':'KHEVSURETI the historical geographical area. It is located in the eastern mountainous region of the Caucasus mountain range in the northern and southern slopes. The Caucasus mountain range divides into two parts - and Reversed Khevsureti. Khevsureti consists of three gorges: Migkhevi, Shatili, Arkhoti piraketa Khevsureti - Aragvi gorge.',
+'tourDetailShort':'<h6>Routes: </h6><p> Tbilisi - Barisakho - gudani  - Datvisjvari pass- lebaiskari -kistani - shatili -muco-Ardoti-Tbilisi </p><h6>Tour Type: </h6><p> eco tour,cultural,Monastery</p><h6>Food: </h6><p> two meals a day  </p><h6>Placement: </h6><p> Overnight in a Family hotel for one nights</p><h6>Duration: </h6><p> 1 nights , 2 days</p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
+'tourDetailShortHeaderName':'2-Day tour in KHEVSURETI',
+'tourDetailLong':'<ul><dt><p>Day 1</p></dt><dd><p>1.Barisakho</p></dd><dd><p>2.gudani</p></dd><dd><p>3.Datvisjvari pass</p></dd><dd><p>4 .lebaiskari</p></dd><dd><p>5.Shatili</p></dd><dd><p>6.nigiht in Shatili</p></dd><dt><p>Day 2</p></dt><dd><p>1.Anatori tomb</p></dd><dd><p>2. Mutso</p></dd><dd><p>3.Ardoti</p></dd><dd><p>4. korsha</p></dd></ul>',
+'tourDetailLongHeaderName':'Tour Details',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a8,
+'languageID':rusID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/xevsuretiDetail.jpg',
+'tourName':'Хевсурети',
+'aboutPlaceShort':'Хевсурети исторический географический район. Он расположен в восточной части горного региона Кавказского хребта в северных и южных склонах. Кавказский хребет разделяется на две части - и обращенно Хевсурети. Хевсурети состоит из трех ущелий: Migkhevi, Шатили, Архоти piraketa Хевсурети - Арагви ущелью.',
+'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси - Барисахо - Перевал Датвис Джвари - Лебаискари - Шатили - . Муцо - Ардоти-Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> Двухразовое питание</p><h6>размещение: </h6><p> Остановка в семейном отеле на1 ночь</p><h6>продолжительность: </h6><p> 1 ночи, 2 дня</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
+'tourDetailShortHeaderName':'Двухдневный тур по Хевсурети',
+'tourDetailLong':'<ul><dt><p>День 1:</p></dt><dd><p>1.Барисахо</p></dd><dd><p>2.Гудани</p></dd><dd><p>3.Перевал Датвис Джвари</p></dd><dd><p>4 .Лебаискари</p></dd><dd><p>5.Шатили</p></dd><dd><p>6. Ночевка в семейном отеле</p></dd><dt><p>День 2</p></dt><dd><p>1.Склепы Анатори</p></dd><dd><p>2. Муцо</p></dd><dd><p>3.Ардоти</p></dd><dd><p>4. Корша</p></dd></ul>',
+'tourDetailLongHeaderName':'Oписание тура:',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+//_____________________________________IMERETI___________________________________________
+
+db.toursTable.insert({	
+'tourID':a9,
+'languageID':geoID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/imeretiDesc.jpg',
+'tourName':'იმერეთი',
+'aboutPlaceShort':'იმერეთი დასავლეთ საქართველოს ერთ-ერთი ისტორიულ-გეოგრაფიული მხარეა, მისი მთავარი ქალაქია ქუთაისი. იმერეთი შემოსაზღვრულია ჩრდილოეთიდან ლიხის ქედით, დასავლეთით მას მდინარე ცხენისწყალი ესაზღვრება, მისგან ჩრდილოეთით კავკასიონის ქედი, ხოლო სამხრეთით ფერსათის ანუ მესხეთის მთები მდებარეობს. იმერეთის დაბლობის ლანდშაფტები კოლხური მცენარეულობითაა დაფარული. იმერეთის ტყეები მდიდარია ცხოველებითა და ფრინველებით. იმერეთი ორ ნაწილად იყოფა - ზემო და ქვემო იმერეთი. ადმინისტრაციული ცენტრი - ქუთაისი. ',
+'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილისი -საჩხერე- ქუთაისი - თბილისი</p><h6>ტურის სახეობა: </h6><p> ეკო ტური,კულტურულ ,შემეცნებითი</p><h6>კვება: </h6><p> ორჯერადი კვება</p><h6>განთავსება: </h6><p> დაბინავება  სასტუმროში</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 ღამე , 2 დღე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
+'tourDetailShortHeaderName':'2 დღიანი ტური იმერეთში',
+'tourDetailLong':'<ul><dt><p>1 დღე</p></dt><dd><p>1. კაცხის სვეტი</p></dd><dd><p>2.გელათის მონასტერი</p></dd><dd><p>3.მოწამეთა მონასტერი</p></dd><dd><p>4.სათაფლის მღვიმე</p></dd><dd><p>5.დაბინავება ოჯახურ სასტუმროში</p></dd><dt><p>მე-2 დღე</p></dt><dd><p>1ბაგრატის ტაძარი</p></dd><dd><p>.ვანის ნაქალაქევი</p></dd><dd><p>3. ბაღდათი</p></dd><dd><p>4.ღვინის დეგუსტაცია</p></dd><dd><p>5.იარაღის მუზეუმი </p></dd></ul>',
+'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a9,
+'languageID':engID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/imeretiDesc.jpg',
+'tourName':'Imereti',
+'aboutPlaceShort':'  Imereti in western Georgia is one of the historical and geographical area, the main city of Kutaisi. Imereti Likhi Range to the north, it is bordered to the west it is bordered by the river Tskhenistskali, the Caucasus mountain range to the north, while the south of the Meskhetian Persati Mountains located. Imereti lowland landscapes Colchis mtsenareulobitaa covered. Imereti forests are rich in animals and birds. Imereti is divided into two parts - upper and lower Imereti. The administrative center - Kutaisi.',
+'tourDetailShort':'<h6>Routes: </h6><p> Tbilisi -Sachkhere- Kutaisi - Tbilisi </p><h6>Tour Type: </h6><p> eco tour,cultural,Monastery</p><h6>Food: </h6><p> two meals a day  </p><h6>Placement: </h6><p> Overnight in a  hotel for one nights</p><h6>Duration: </h6><p> 1 nights , 2 days</p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
+'tourDetailShortHeaderName':'2 day Tour imereti',
+'tourDetailLong':'<ul><dt><p>1 დღე</p></dt><dd><p>1. კაცხის სვეტი</p></dd><dd><p>2.გელათის მონასტერი</p></dd><dd><p>3.მოწამეთა მონასტერი</p></dd><dd><p>4.სათაფლის მღვიმე</p></dd><dd><p>5.დაბინავება ოჯახურ სასტუმროში</p></dd><dt><p>მე-2 დღე</p></dt><dd><p>1ბაგრატის ტაძარი</p></dd><dd><p>.ვანის ნაქალაქევი</p></dd><dd><p>3. ბაღდათი</p></dd><dd><p>4.ღვინის დეგუსტაცია</p></dd><dd><p>5.იარაღის მუზეუმი </p></dd></ul>',
+'tourDetailLongHeaderName':'Tour Details',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
+db.toursTable.insert({	
+'tourID':a9,
+'languageID':rusID,
+'effDate':new Date(),
+'mainImageURL':'images/website/.jpg',
+'descriptionImageURL':'images/website/imeretiDesc.jpg',
+'tourName':'Имерети',
+'aboutPlaceShort':'Имеретинский в Западной Грузии является одним из историко-географической области, главный город Кутаиси. Имеретия Ликхи Range на север, она граничит на западе она граничит с рекой Цхенисцкали, Кавказский хребет на север, в то время как к югу от месхетинцев Persati гор расположен. Имеретинская низменность ландшафты Колхида mtsenareulobitaa покрыты. Имеретинки леса богаты животных и птиц. Имеретия делится на две части - верхнюю и нижнюю Имеретии. Административный центр - Кутаиси. ',
+'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси -Сачхере -Кутаиси-Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> Двухразовое питание</p><h6>размещение: </h6><p> Остановка в  отеле на1 ночь</p><h6>продолжительность: </h6><p> 1 ночи, 2 дня</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
+'tourDetailShortHeaderName':'Двухдневный тур в Имерети',
+'tourDetailLong':'<ul><dt><p>День 1</p></dt><dd><p>1. Столп Кацхи</p></dd><dd><p>2.Монастырь Гелати и Гелатская академия</p></dd><dd><p>3.Монастырь Моцамета</p></dd><dd><p>4. Сатаплия</p></dd><dd><p>5 Ночь в семейном отеле</p></dd><dt><p>День 2:</p></dt><dd><p>1.Храм Баграта</p></dd><dd><p>2.Нокалакеви Вани</p></dd><dd><p>3. Багдад</p></dd><dd><p>4. Дегустация вина</p></dd><dd><p>5. Музей старого оружия</p></dd></ul>',
+'tourDetailLongHeaderName':'Oписание тура:',
+'tourPrice':'150',
+'tourPriceCurrency':'GEL',
+'MainPageFlag':'Y',
+'galeryID':galeryID,
+})
+
+
 
 
 
@@ -435,4 +666,6 @@ db.raceTable.insert({
 	'raceDescription':'Поездка 25 лари',
 	'imageURL':'images/website/bakuriani.jpg'
 })
+
+//___________________________________________________________________________________________________
 

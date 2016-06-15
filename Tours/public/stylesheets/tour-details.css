@@ -4,13 +4,13 @@
 }
 
 
-.tour-details-background {
+/*.tour-details-background {
     background-image: url("../images/system/svaneti1.jpg");
     background-size: cover;
     background-position: 0% 85%;
     min-height: 80vh;
     background-repeat: no-repeat;
-}
+}*/
 
 .tour-details {
     margin-top: 50px;

@@ -2,7 +2,7 @@
 .container a {
     text-decoration: none;
 }
-.trips-backgroundasd {
+/*.trips-backgroundasd {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/system/main.jpg");
     background-size: cover;
     position: relative;
@@ -10,7 +10,7 @@
     min-height: 80vh;
     background-repeat: no-repeat;
 }
-/* Oz  edited     --->  zeda yleobaa ar  mushaobs */
+ Oz  edited     --->  zeda yleobaa ar  mushaobs 
 .trips-background {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/system/main.jpg");
     background-size: cover;
