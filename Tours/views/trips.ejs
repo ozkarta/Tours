@@ -52,33 +52,41 @@ function getHardCode(varName){
                             <h3><%=item.raceName %></h3>
                             <p><%=item.raceDescription %></p>
                             <button type="button" class="btn btn-primary clicked"><%=getHardCode('@book') %></button>
+
                             <div class='hidden trip-form'>
-                                <form>
+                                <form action="/bookTrip" method="POST">
                                     <div class="row">
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputPassword1"><%=getHardCode('@fname') %></label>
-                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@fname') %>">
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@fname') %>" name="fname" >
                                         </div>
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputPassword1"><%=getHardCode('@lname') %></label>
-                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@lname') %>">
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@lname') %>" name="lname">
                                         </div>
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputFile"><%=getHardCode('@birthDate') %></label>
-                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate') %>">
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate') %>" name="bdate">
                                         </div>
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputFile"><%=getHardCode('@idNumber') %></label>
-                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber') %>">
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber') %>" name="idNumber">
                                         </div>
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputPassword1"><%=getHardCode('@mail') %></label>
-                                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail') %>">
+                                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail') %>" name="mail">
                                         </div>
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputFile"><%=getHardCode('@cellNumber') %></label>
-                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber') %>">
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber') %>" name="cellNumber">
                                         </div>
+                                       
+                                         <div class="col-md-4 inputContainer">
+                                            <label for="exampleInputPassword1"><%=getHardCode('@number')%></label>
+                                            <input type="text" class="form-control" placeholder="<%=getHardCode('@number')%>" name="quantity">
+                                         </div>
+                                        <input type="hidden" name="raceID" value="<%=item.raceID%>"/>
+                                        <input type="hidden" name="raceName" value="<%=item.raceName%>"/>
                                     </div>
                                     <button type="submit" class="btn btn-success success submitForm"><%=getHardCode('@submit') %></button>
                                 </form>

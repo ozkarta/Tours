@@ -1,3 +1,5 @@
+var endOfLine='<br>'// = require('os').EOL;
+
 var hardCodedItem=function(variableName,engValue,rusValue,geoValue){
 	this.variableName=variableName;
 	this.engValue=engValue;
@@ -102,9 +104,9 @@ var screener=function(){
 		engList.push(new menuItem(5,'Contact','contact','English'));
 
 		var rusList=[];
-		rusList.push(new menuItem(0,'главный','/','русский'));
+		rusList.push(new menuItem(0,'Главная','/','русский'));
 		rusList.push(new menuItem(1,'туры','tours','русский'));
-		rusList.push(new menuItem(2,'Regular Races rus','trips','русский'));
+		rusList.push(new menuItem(2,'Рейсы','trips','русский'));
 		rusList.push(new menuItem(3,'галерея','galery','русский'));
 		rusList.push(new menuItem(4,'о нас','about','русский'));
 		rusList.push(new menuItem(5,'контакт','contact','русский'));
@@ -120,7 +122,8 @@ var screener=function(){
 	}
 	screener.prototype.initHardCodes=function(){
 		this.hardCodes.push(new hardCodedItem('@tours','Tours','туры','ტურები'));
-		this.hardCodes.push(new hardCodedItem('@races','Races','Regular Races rus','რეისები'));
+		this.hardCodes.push(new hardCodedItem('@album','Photo Album','albomi rusulad','ფოტო ალბომი'));
+		this.hardCodes.push(new hardCodedItem('@races','Races','Рейсы','რეისები'));
 		this.hardCodes.push(new hardCodedItem('@toursInGeorgia','Tours In Georgia','tours in georgia rus','ტურები საქართველოში'));
 		this.hardCodes.push(new hardCodedItem('@bookTheTour','Book the Tour','туры დაჯავშნა','ტურების დაჯავშნა'));
 		this.hardCodes.push(new hardCodedItem('@fname','Fierst Name','туры','სახელი'));
@@ -139,6 +142,17 @@ var screener=function(){
 		this.hardCodes.push(new hardCodedItem('@send','Send','туры','გაგზავნა'));
 		
 		this.hardCodes.push(new hardCodedItem('@price','Price: ','cena rus:  ','ფასი: '));
+		
+		this.hardCodes.push(new hardCodedItem('@number','Quantity: ','raod rus:  ','რაოდენობა'));
+		this.hardCodes.push(new hardCodedItem('@aboutUsTitle','LTD  Mate Tour Georgia','SPs MateTourGeorgia','შპს  Mate Tour Georgia'));
+		this.hardCodes.push(new hardCodedItem('@aboutUsText1',
+				'Travel agency "Mate Tour Georgia" is a young travel agency. Our agency specializes on internal group and individual tourism, independently develops and realizes rounds on rest and trips in Georgia.The Company offers tourists entering in Georgia appropriate service with high standards.',
+				'Туристическая компания "Mate Tour Georgia" является молодой туристической компанией.Наша компания занимается организацией как разнообразных групповых, так и индивидуальных туров отдыха и поездок по Грузии.',
+				'ტურისტული კომპანია შპს "Mate Tour Georgia"  არის ახალგაზრდა ტურისტული კომპანია,რომელიც ანხორციელებს შიდა ტურებს საქართველოში. კომპანია საქართველოში შემომსვლელ ვიზიტორებს სთავაზობს უმაღლესი სტანდარტების შესაბამის მომსახურებას.'));
+		this.hardCodes.push(new hardCodedItem('@aboutUsText2',
+				'<h3>Travel Company "Mate Tour Georgia" offers:</h3><p>'+endOfLine+'Booking of air tickets in all directions;'+endOfLine+'Services of the guide and the translator;'+endOfLine+'Transfer from/to the airport;'+endOfLine+'The car with the professional driver;'+endOfLine+'Excursions;'+endOfLine+'Room reservation of hotels of any class;'+endOfLine+'Wine tasting in the unique ancient cellars;'+endOfLine+'Excursions are conducted in English, Russian and Georgian;'+endOfLine+'Cultural-cognitive and specialized single/multi-day tours for groups and individual tourists;'+endOfLine+'</p>',
+				'<h3>Наше компания  "Mate Tour Georgia"  предлагает:</h3>'+endOfLine+'<p>бронирование авиабилетов по всем направлениям;'+endOfLine+'услуги гида и переводчика;'+endOfLine+'трансфер из/до аэропорта;'+endOfLine+'машину с профессиональным водителем;'+endOfLine+'экскурсии;'+endOfLine+'бронирование номеров гостиниц любого класса;'+endOfLine+'Экскурсии на русском, английском, грузинском языках;'+endOfLine+'Дегустацию вин в уникальных старинных погребах;'+endOfLine+'Культурно-познавательные и специализированные одно/многодневные как групповые, так и индивидуальные туры;'+endOfLine+'</p>',
+				'<h3>ჩვენი კომპანია გთავაზობთ:</h3><p>'+endOfLine+'თვითმფრინავის ბილეთების დაჯავშნას ყველა მიმართულებით;'+endOfLine+'გიდისა და თარჯიმნის მომსახურებას;'+endOfLine+'ტრანსფერებს აეროპორტამდე და აეროპორტიდან ქალაქში;'+endOfLine+'საექსკურსიო მარშრუტებს;'+endOfLine+' სასტუმროებისა და ოჯახური სასტუმროს  დაჯავშნას საქართველოს მაშტაბით;'+endOfLine+'სატრანსპორტო მომსახურებას;'+endOfLine+'ექსკურსიების ჩატარებას ინგლისურ, რუსულ და ქართულ ენებზე;'+endOfLine+'ღვინის დეგუსტაციას უნიკალურ უძველეს სარდაფებში;'+endOfLine+'კულტურულ-შემეცნებით  ტურებს;<p/>'));
 		
 
 	}

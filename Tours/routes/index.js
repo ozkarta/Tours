@@ -5,6 +5,13 @@ var screener=require('../node_scripts/screener');
 var db_Connector=require('../node_scripts/db_connector');
 var db=new db_Connector.db_connector();
 var async =  require ('async');
+var nodeMailer=require('nodemailer');
+
+var tripMailBodyHTML='<!DOCTYPE html><html><head><style>table, th, td {    border: 1px solid black;    border-collapse: collapse;}th, td {    padding: 5px;    text-align: left;    }</style></head><body><h2>Trip Booking Request</h2><table style="width:100%">  <tr>    <th>სახელი</th>    <th>გვარი</th>    <th>დაბადების თარიღი</th>    <th>ID</th>    <th>ტელეფონი</th>    <th colspan="2">მეილი</th>  </tr>  <tr>    <td>@fname@</td>    <td>@lname@</td>    <td>@bdate@</td>    <td>@id@</td>    <td>@phone@</td>    <td>@mail@</td>  </tr></table><br/><br/><br/><br/><br/><br/><h2>Trip Information</h2><table style="width:100%">  <tr>    <th>რეისის ID</th>    <th>რეისის სახელი</th>    <th>დასაჯავშნი ადგილების რაოდენობა</th>  </tr>  <tr>    <td>@raceID@</td>    <td>@raceName@</td>        <td>@quantity@</td>      </tr></table></body></html>';
+
+
+var tourMailBodyHTML='<!DOCTYPE html><html><head><style>table, th, td {    border: 1px solid black;    border-collapse: collapse;}th, td {    padding: 5px;    text-align: left;    }</style></head><body><h2>Tour Booking Request</h2><table style="width:100%">  <tr>    <th>სახელი</th>    <th>გვარი</th>    <th>დაბადების თარიღი</th>    <th>ID</th>    <th>ტელეფონი</th>    <th colspan="2">მეილი</th>      </tr>  <tr>    <td>@fname@</td>    <td>@lname@</td>    <td>@bdate@</td>    <td>@id@</td>    <td>@phone@</td>    <td>@mail@</td>  </tr></table><br/><br/><br/><br/><br/><br/><h2>Tour Information</h2><table style="width:100%">  <tr>    <th>ტურის ID</th>    <th>ტურის სახელი</th>    <th>დასაჯავშნი ადგილების რაოდენობა</th>  </tr>  <tr>    <td>@tourID@</td>    <td>@tourName@</td>     <td>@quantity@</td>     </tr></table></body></html>';
+
 
 var initializeSession =function(req,callback){
 //console.log(req.url);
@@ -333,6 +340,100 @@ var galeryDetailPreLoad=function(req,callback){
 }
 
 
+var bookTripPreLoad=function(req,callback){
+	var  fName=req.body.fname;
+
+	var  lName=req.body.lname;
+
+	var  birthDate=req.body.bdate;
+	var  idNumber=req.body.idNumber;
+	var  mail=req.body.mail;
+	var  phoneNumber=req.body.cellNumber;
+	var quantity=req.body.quantity;
+	var raceID=req.body.raceID;
+	var raceName=req.body.raceName;
+
+	var mailBody=tripMailBodyHTML
+	mailBody=mailBody.replace('@fname@',fName);
+	mailBody=mailBody.replace('@lname@',lName);
+	mailBody=mailBody.replace('@bdate@',birthDate);
+	mailBody=mailBody.replace('@id@',idNumber);
+	mailBody=mailBody.replace('@phone@',phoneNumber);
+	mailBody=mailBody.replace('@mail@',mail);
+
+	mailBody=mailBody.replace('@raceID@',raceID);
+	mailBody=mailBody.replace('@raceName@',raceName);
+
+	mailBody=mailBody.replace('@quantity@',quantity);
+	//____________________MAILER________________________________
+	var serverMail='matetoursmailserver%40gmail.com';
+	var serverMailPassword='12qwert12';
+
+	var mailOptions = {
+	    from: '"Mate Tours Server" <'+serverMail+'>', // sender address 
+	    to: 'ozbegi1@gmail.com,matetourgeorgia@gmail.com', // list of receivers 
+	    subject: 'Trip Booking Request: '+raceName, // Subject line 
+	    text: 'modi idi naxui', // plaintext body 
+	    html: mailBody// html body 
+	};
+	var smtpConfig = 'smtps://'+serverMail+':'+serverMailPassword+'@smtp.gmail.com';
+
+	var transporter = nodeMailer.createTransport(smtpConfig);
+
+	transporter.sendMail(mailOptions, function(error, info){
+	    if(error){
+	        console.log(error);
+	    }
+	    console.log('Message sent: ' + info.response);
+	});
+}
+var bookTourPreLoad=function(req,callback){
+	var  fName=req.body.fname;
+
+	var  lName=req.body.lname;
+
+	var  birthDate=req.body.bdate;
+	var  idNumber=req.body.idNumber;
+	var  mail=req.body.mail;
+	var  phoneNumber=req.body.cellNumber;
+	var quantity=req.body.quantity;
+	var tourID=req.body.tourID;
+	var tourName=req.body.tourName;
+
+	var mailBody=tourMailBodyHTML
+	mailBody=mailBody.replace('@fname@',fName);
+	mailBody=mailBody.replace('@lname@',lName);
+	mailBody=mailBody.replace('@bdate@',birthDate);
+	mailBody=mailBody.replace('@id@',idNumber);
+	mailBody=mailBody.replace('@phone@',phoneNumber);
+	mailBody=mailBody.replace('@mail@',mail);
+
+	mailBody=mailBody.replace('@tourID@',tourID);
+	mailBody=mailBody.replace('@tourName@',tourName);
+	mailBody=mailBody.replace('@quantity@',quantity);
+
+	//____________________MAILER________________________________
+	var serverMail='matetoursmailserver%40gmail.com';
+	var serverMailPassword='12qwert12';
+
+	var mailOptions = {
+	    from: '"Mate Tours Server" <'+serverMail+'>', // sender address 
+	    to: 'ozbegi1@gmail.com,matetourgeorgia@gmail.com', // list of receivers 
+	    subject: 'Tour Booking Request: '+tourName, // Subject line 
+	    text: 'modi idi naxui', // plaintext body 
+	    html: mailBody// html body 
+	};
+	var smtpConfig = 'smtps://'+serverMail+':'+serverMailPassword+'@smtp.gmail.com';
+
+	var transporter = nodeMailer.createTransport(smtpConfig);
+
+	transporter.sendMail(mailOptions, function(error, info){
+	    if(error){
+	        console.log(error);
+	    }
+	    console.log('Message sent: ' + info.response);
+	});
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -419,6 +520,26 @@ router.get('/galeryDetail', function(req, res, next) {
   		
 	});
 	
+});
+//_______________POSTS_________________________
+router.post('/bookTrip',function(req,res,next){
+	initializeSession(req,function(){
+		console.log('____________________MAILER_START________________________________')
+
+		bookTripPreLoad(req,function(){
+			console.log('____________________MAILER_END________________________________')
+		});
+	});
+});
+
+router.post('/bookTour',function(req,res,next){
+	initializeSession(req,function(){
+		console.log('____________________MAILER_START________________________________')
+
+		bookTourPreLoad(req,function(){
+			console.log('____________________MAILER_END________________________________')
+		});
+	});
 });
 
 module.exports = router;

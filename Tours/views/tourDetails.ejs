@@ -60,19 +60,19 @@ function getHardCode(varName){
                             <div class="caption about">
                                 <h3><%=tour.tourName %></h3>
                                 <p><span class="bolderer"></span> 
-                                    <%=tour.aboutPlaceShort %>
+                                    <%-tour.aboutPlaceShort %>
                                 </p>
                             </div>
                         </div>
                         <div class="about-tour">
                             <div class="simple-details col-sm-5 col-xs-12">
                                 <h4><%=tour.tourDetailShortHeaderName %></h4>
-                                <%=tour.tourDetailShort %>
+                                <%-tour.tourDetailShort %>
 
                                 <%
                                     if (tour.galery!==undefined){
                                 %>
-                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span>ფოტო ალბომი</h3>
+                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span><%=getHardCode('@ablum')%></h3>
                                 <div class="album-in-tour-details col-xs-12">
                                     <a href="galeryDetail?galeryID=<%=tour.galery.galeryID%>">
                                         <div class="col-sm-9 col-sm-offset-1 min-size det-alb-backg">
@@ -86,37 +86,43 @@ function getHardCode(varName){
                             <div class="main-details col-sm-7 col-xs-12">
                                 <h4><%=tour.tourDetailLongHeaderName %></h4>
                                
-                                <%=tour.tourDetailLong %>
+                                <%-tour.tourDetailLong %>
                             </div>
                         </div>
                         <h3 class="book col-xs-12"><%=getHardCode('@bookTheTour')%></h3>
                         <div class='trip-form col-xs-12'>
-                            <form>
+                            <form method="POST" action="bookTour">
                                 <div class="row">
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@fname')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@fname')%>">
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@fname')%>" name="fname">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@lname')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@lname')%>">
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@lname')%>" name="lname">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@birthDate')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate')%>">
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate')%>" name="bdate">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@idNumber')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber')%>">
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber')%>" name="idNumber">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@mail')%></label>
-                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail')%>">
+                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail')%>" name="mail">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@cellNumber')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber')%>">
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber')%>" name="cellNumber">
                                     </div>
+                                     <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@number')%></label>
+                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@number')%>" name="quantity">
+                                     </div>
+                                     <input type="hidden" name="tourID" value="<%=tour.tourID%>"/>
+                                     <input type="hidden" name="tourName" value="<%=tour.tourName%>"/>
                                 </div>
                                 <button type="submit" class="btn btn-success success submitForm"><%=getHardCode('@book')%></button>
                             </form>
