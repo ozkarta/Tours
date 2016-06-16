@@ -6,20 +6,20 @@ function getHardCode(varName){
         var item=locals.user.screener.hardCodes[i];
             if(item.variableName==varName){
                 //console.dir(item);
-                console.log('looking for '+locals.user.defaultLanguage)
+                //console.log('looking for '+locals.user.defaultLanguage)
                 if(locals.user.defaultLanguage==='ქართული'){
-                    console.log('found  kartulshi')
-                    console.log(item.geoValue);
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
                     return item.geoValue;
                     
                 }
                 if(locals.user.defaultLanguage=='English'){
-                    console.log('found  inglisurshi');
+                    //console.log('found  inglisurshi');
                     return item.engValue;
                     
                 }
                 if(locals.user.defaultLanguage=='русский'){
-                    console.log('found rusulshi');
+                    //console.log('found rusulshi');
                     return item.rusValue
                     
                 }
@@ -51,6 +51,8 @@ function getHardCode(varName){
     <link rel="stylesheet" href="./stylesheets/about.css">
     <link rel="stylesheet" href="./stylesheets/contact.css">
     <link rel="stylesheet" href="./stylesheets/tour-details.css">
+    <link rel="stylesheet" href="./stylesheets/album-galery.css">
+    <link rel="stylesheet" href="./stylesheets/lightgallery.min.css">
     <title>Mate Tours</title>
 </head>
 
@@ -110,7 +112,7 @@ function getHardCode(varName){
                          <!--select class="selectpicker" style=" position:absolute;right:5% ;top:30%" onchange="languageChooserSelectionChanged(this)">
                           <%if(locals.user!==undefined){
                                 locals.user.screener.languageSupport.forEach(function(lang){
-                                console.log(lang);
+                                //console.log(lang);
                                     if(lang===locals.user.defaultLanguage){
                                     %>
                                         <option selected="true"><a href="#"><a href="" class=""><%=lang %></a></option>
@@ -189,16 +191,16 @@ function getHardCode(varName){
 
 
 
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/owl.carousel.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="./javascripts/jquery.min.js"></script>
+    <script src="./javascripts/owl.carousel.js"></script>
+    <script src="./javascripts/bootstrap.min.js"></script>
     <!--script src="javascripts/script.js"></script-->
-     <script src="javascripts/lightgallery.min.js"></script>
+     <script src="./javascripts/lightgallery.min.js"></script>
     <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
-    <script src="javascripts/jquery.mousewheel.min.js"></script>
+    <script src="./javascripts/jquery.mousewheel.min.js"></script>
     <!-- lightgallery plugins -->
-    <script src="javascripts/lg-thumbnail.min.js"></script>
-    <script src="javascripts/lg-fullscreen.min.js"></script>
+    <script src="./javascripts/lg-thumbnail.min.js"></script>
+    <script src="./javascripts/lg-fullscreen.min.js"></script>
 
     <script type="text/javascript">
 
@@ -230,7 +232,7 @@ function getHardCode(varName){
 
               function languageChooserSelectionChanged(the){
                 document.getElementById('chooserPoster').action=location.pathname;
-                 console.dir(location);
+                 //console.dir(location);
                  
                  document.getElementById('language').value=the.options[the.selectedIndex].value;
                 
@@ -243,30 +245,33 @@ function getHardCode(varName){
         $("#lightgallery").lightGallery();
     });
 
-            $(window).scroll(function(e) {
+          /*  $(window).scroll(function(e) {
         $('html, body').animate({
             scrollTop: $('.container').eq(1).offset().top
         }, 'slow');
         $( this ).off(e);
     });
-       
+       */
        
 
     $(document).ready(function() {
     $('.clicked').on('click', function(e) {
         var current = $(e.target).next();
         var show = current.hasClass('hidden');
+        $(this).css({"background-color": "#286090","margin-right":"0"}); 
         if (show) {
             current.hide();
             current.removeClass('hidden');
             current.slideDown('slow');
-            $(this).fadeTo("slow", 0.33);
+            // $(this).fadeTo("slow", 0.33);
+            $(this).css({"background-color": "red","margin-right":"124px"}); 
             $(this).text("<%=getHardCode('@close')%>");
-        } else {
+        } else { 
 
             current.slideUp('slow', function() {
                 current.addClass('hidden');
                 current.slideUp('slow');
+
             });
             $(this).text("<%=getHardCode('@book')%>");
             $(this).fadeTo("slow", 1);

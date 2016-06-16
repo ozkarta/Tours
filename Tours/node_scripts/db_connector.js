@@ -38,6 +38,7 @@ var db_connector=function(){
 		this.mongo.connect(this.url,function(err,db){
 					var galeryCollection=db.collection('galeryTable');
 					galeryCollection.find({'galeryID': ObjectId(galeryID),'mainImageFlag':'Y'}).toArray(function(err,docs){
+						console.dir(docs);
 						callback(docs);
 					});
 				});

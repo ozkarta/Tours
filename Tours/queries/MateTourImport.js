@@ -93,7 +93,35 @@ db.toursTable.insert({
 'MainPageFlag':'Y',
 'galeryID':galeryID,
 })
+
+db.galeryTable.insert({
+	'galeryID':galeryID,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/mcxeta/mcxeta1.jpg',
+	'mainImageFlag':'Y'
+})
+
+db.galeryTable.insert({
+	'galeryID':galeryID,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/mcxeta/mcxeta2.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/mcxeta/mcxeta3.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/mcxeta/mcxeta4.jpg',
+	'mainImageFlag':'n'
+})
 //_______________________________________SVANETI_______________________________________________________
+var galeryID1=new ObjectId()
+
 db.toursTable.insert({	
 'tourID':a1,
 'languageID':geoID,
@@ -109,7 +137,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID1,
 })
 
 
@@ -128,7 +156,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID1,
 })
 
 
@@ -147,10 +175,16 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID1,
 })
-
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti1.jpg',
+	'mainImageFlag':'Y'
+})
 //__________________________________SAMCXE_JAVAKHETI________________________________________________
+var galeryID2=new ObjectId()
 db.toursTable.insert({	
 'tourID':a2,
 'languageID':geoID,
@@ -165,8 +199,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID2,
 })
 
 
@@ -184,8 +218,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Tour Details',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID2,
 })
 
 
@@ -203,11 +237,90 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Oписание тура:',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID2,
 })
-
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe1.jpg',
+	'mainImageFlag':'Y'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe2.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe3.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe4.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe5.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe6.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe7.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe8.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe9.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe10.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe11.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe12.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID2,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/samcxe/samcxe13.jpg',
+	'mainImageFlag':'N'
+})
 //________________________________________yazbegi__________________________________________________
+var galeryID3=new ObjectId();
+
 
 db.toursTable.insert({	
 'tourID':a3,
@@ -224,7 +337,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID3,
 })
 
 
@@ -243,7 +356,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID3,
 })
 
 
@@ -262,10 +375,18 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID3,
 })
-
+/*
+db.galeryTable.insert({
+	'galeryID':galeryID3,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti_galery1.jpg',
+	'mainImageFlag':'Y'
+})
+*/
 //___________________________________tusheti_______________________________________
+var galeryID4=new ObjectId()
 db.toursTable.insert({	
 'tourID':a4,
 'languageID':geoID,
@@ -281,7 +402,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID4,
 })
 
 
@@ -300,7 +421,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID4,
 })
 
 
@@ -319,18 +440,26 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID4,
 })
 
+/*
+db.galeryTable.insert({
+	'galeryID':galeryID4,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti_galery1.jpg',
+	'mainImageFlag':'Y'
+})
+*/
 //___________________________________________kaxeti_____________________________________
-
+var galeryID5=new ObjectId()
 db.toursTable.insert({	
 'tourID':a5,
 'languageID':geoID,
 'effDate':new Date(),
 'mainImageURL':'images/website/kakhetiMain.jpg',
 'descriptionImageURL':'images/website/kakhetiDesc.jpg',
-'tourName':'კახეთი',
+'tourName':'კახეთი 1 დღიანი',
 'aboutPlaceShort':'კახეთი საქართველოს ერთ-ერთი უმშვენიერესი და მრავალფეროვანი მხარეა.კახეთი აღმოსავლეთ საქართველოს საზღვრისპირა რეგიონს წარმოადგენს.მას ჩრდილოეთიდან რუსეთის ფედერაცია ესაზღვრება, აღმოსავლეთიდან და სამხრეთიდან აზერბაიჯანი.ვინც კახეთში ერთხელ მაინც ყოფილა, მისთვის ეს მხარე მუდამ კარგ ღვინოსთან და გულღია მასპინძლობასთან ასოცირდება, რადგან კახეთი მევენახეობა-მეღვინეობით განთქმული მხარეა. აქ მრავალი ჯიშის ვაზი ხარობს და შესაბამისად მრავალფეროვანი მაღალხარისხიანი ღვინოებიც მზადდება.',
 'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილისი-დავით გარეჯის მონასტერი-სიღნაღი-ბოდბე-თბილისი</p><h6>ტურის სახეობა: </h6><p> კულტურულ ,საეკლესიო</p><h6>კვება: </h6><p> არა</p><h6>განთავსება: </h6><p> არა</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 დღე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
 'tourDetailShortHeaderName':'1 დღიანი  ტური კახეთში',
@@ -339,7 +468,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID5,
 })
 
 
@@ -349,7 +478,7 @@ db.toursTable.insert({
 'effDate':new Date(),
 'mainImageURL':'images/website/kakhetiMain.jpg',
 'descriptionImageURL':'images/website/kakhetiDesc.jpg',
-'tourName':'Kakheti',
+'tourName':'Kakheti 1-Day',
 'aboutPlaceShort':'Kakheti is one of the most beautiful and diverse lands in Georgia.kakheti is a region along the eastern boundary of Georgia. It is bordered by the Russian Federation from the North and Azerbaijan from the East and South.Whoever has traveled to Kakheti even once in his life will always associate this province with good wine and welcoming hospitality – Kakheti is a land famous for viticulture and winemaking. Farmers grow many kinds of grapes here and are skilled at producing a wide variety of high-quality wines.',
 'tourDetailShort':'<h6>Routes: </h6><p> tbilisi-David Gareja-Bodbe--tbilisi</p><h6>Tour Type: </h6><p> cultural,Monastery</p><h6>Food: </h6><p> no</p><h6>Placement: </h6><p> no</p><h6>Duration: </h6><p>  one day </p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
 'tourDetailShortHeaderName':'1-Day tour in Kakheti ',
@@ -358,7 +487,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID5,
 })
 
 
@@ -368,7 +497,7 @@ db.toursTable.insert({
 'effDate':new Date(),
 'mainImageURL':'images/website/kakhetiMain.jpg',
 'descriptionImageURL':'images/website/kakhetiDesc.jpg',
-'tourName':'Кахетия',
+'tourName':'Кахетия Однодневный тур',
 'aboutPlaceShort':'Кахетия является одним из самых красивых и отличающихся мест в Грузии. Кахетия- это регион расположенный вдоль восточной границы. Он граничит с Российской Федерацией с Севера и с Азербайджаном с Востока и Юга. Любой кто посещал Кахетию хотя бы раз в жизни будет ассоциировать его с хорошим вином и гостеприимством . Кахетия - это земля знаменитая виноградством и виноделием.Фермеры растят здесь множество сортов винограда, которые используются специалистами в производстве широкого разнообразия вина высшего качества.',
 'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси - Давид-Гареджи - Бодбе- Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> нет</p><h6>размещение: </h6><p> нет</p><h6>продолжительность: </h6><p> 1 дня</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
 'tourDetailShortHeaderName':'Однодневный тур в Кахетии',
@@ -377,16 +506,107 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID5,
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti1.jpg',
+	'mainImageFlag':'Y'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti2.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti3.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti4.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti5.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti6.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti7.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti8.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti9.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti10.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti11.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti12.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti13.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti14.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti15.jpg',
+	'mainImageFlag':'N'
 })
 //___________________________kakheti 2 dgiani____________________________________________
+var galeryID6=new ObjectId()
 db.toursTable.insert({	
 'tourID':a6,
 'languageID':geoID,
 'effDate':new Date(),
 'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
 'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
-'tourName':'კახეთი',
+'tourName':'კახეთი 2 დღიანი',
 'aboutPlaceShort':'კახეთი საქართველოს ერთ-ერთი უმშვენიერესი და მრავალფეროვანი მხარეა.კახეთი აღმოსავლეთ საქართველოს საზღვრისპირა რეგიონს წარმოადგენს.მას ჩრდილოეთიდან რუსეთის ფედერაცია ესაზღვრება, აღმოსავლეთიდან და სამხრეთიდან აზერბაიჯანი.ვინც კახეთში ერთხელ მაინც ყოფილა, მისთვის ეს მხარე მუდამ კარგ ღვინოსთან და გულღია მასპინძლობასთან ასოცირდება, რადგან კახეთი მევენახეობა-მეღვინეობით განთქმული მხარეა. აქ მრავალი ჯიშის ვაზი ხარობს და შესაბამისად მრავალფეროვანი მაღალხარისხიანი ღვინოებიც მზადდება.',
 'tourDetailShort':'<h6>მარშრუტი: </h6><p> თბილისი-წინანდალი-ყვარელი-თბილისი</p><h6>ტურის სახეობა: </h6><p> კულტურულi ,საეკლესიო</p><h6>კვება: </h6><p> ორჯერადი კვება</p><h6>განთავსება: </h6><p> დაბინავება სასტუმროში</p><h6>ტურის ხანგრძლივობა: </h6><p> 1 დღე და 2 ღამე</p><h6>მანძილი: </h6><p> </p><h6>სატრანსპორტო საშუალება: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>ფასი: </h6><p> </p>',
 'tourDetailShortHeaderName':'2 დღიანი ტური კახეთში',
@@ -394,8 +614,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID5,
 })
 
 
@@ -405,7 +625,7 @@ db.toursTable.insert({
 'effDate':new Date(),
 'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
 'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
-'tourName':'Kakheti',
+'tourName':'Kakheti 2-Day',
 'aboutPlaceShort':'Kakheti is one of the most beautiful and diverse lands in Georgia.kakheti is a region along the eastern boundary of Georgia. It is bordered by the Russian Federation from the North and Azerbaijan from the East and South.Whoever has traveled to Kakheti even once in his life will always associate this province with good wine and welcoming hospitality – Kakheti is a land famous for viticulture and winemaking. Farmers grow many kinds of grapes here and are skilled at producing a wide variety of high-quality wines.',
 'tourDetailShort':'<h6>Routes: </h6><p> tbilisi-Tsinandali-Kvareli-tbilisi</p><h6>Tour Type: </h6><p> cultural,Monastery</p><h6>Food: </h6><p> two meals a day </p><h6>Placement: </h6><p> Overnight in a hotel for one night</p><h6>Duration: </h6><p>  1 night , 2 days </p><h6>Distance: </h6><p> </p><h6>Transport: </h6><p>  Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>Price: </h6><p> </p>',
 'tourDetailShortHeaderName':'2-Day tour in Kakheti ',
@@ -413,8 +633,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Tour Details',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID5,
 })
 
 
@@ -424,7 +644,7 @@ db.toursTable.insert({
 'effDate':new Date(),
 'mainImageURL':'images/website/kaxeti/kaxeti14.jpg',
 'descriptionImageURL':'images/website/kaxeti/kaxeti12.jpg',
-'tourName':'Кахетия',
+'tourName':'Кахетия Двухдневный тур',
 'aboutPlaceShort':'Кахетия является одним из самых красивых и отличающихся мест в Грузии. Кахетия- это регион расположенный вдоль восточной границы. Он граничит с Российской Федерацией с Севера и с Азербайджаном с Востока и Юга. Любой кто посещал Кахетию хотя бы раз в жизни будет ассоциировать его с хорошим вином и гостеприимством . Кахетия - это земля знаменитая виноградством и виноделием.Фермеры растят здесь множество сортов винограда, которые используются специалистами в производстве широкого разнообразия вина высшего качества.',
 'tourDetailShort':'<h6>Маршруты: </h6><p>Тбилиси-Цинандали-Кварели-Тбилиси</p><h6>Тип тура: </h6><p> культурный,церковь</p><h6>питание: </h6><p> Двухразовое питание</p><h6>размещение: </h6><p> Остановка в  отеле на 1 ночь</p><h6>продолжительность: </h6><p> 1 ночи, 2 дня</p><h6>расстояние: </h6><p> </p><h6>Транспорт: </h6><p> Mitsubishi delica (4x4) , nissan xterra (4x4)</p><h6>цена: </h6><p> </p>',
 'tourDetailShortHeaderName':'Двухдневный тур по Кахетии',
@@ -432,12 +652,101 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Oписание тура:',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID5,
 })
-
-
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti1.jpg',
+	'mainImageFlag':'Y'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti2.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti3.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti4.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti5.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti6.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti7.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti8.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti9.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti10.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti11.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti12.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti13.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti14.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID5,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/kaxeti/kaxeti15.jpg',
+	'mainImageFlag':'N'
+})
 //_______________________________GORI___________________________________________________
+var galeryID7=new ObjectId();
 db.toursTable.insert({	
 'tourID':a7,
 'languageID':geoID,
@@ -452,8 +761,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID7,
 })
 
 
@@ -471,8 +780,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Tour Details',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID7,
 })
 
 
@@ -490,11 +799,17 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Oписание тура:',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID7,
 })
-
+/*db.galeryTable.insert({
+	'galeryID':galeryID7,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti_galery1.jpg',
+	'mainImageFlag':'Y'
+})*/
 //_______________________________________xevsureti______________________________________
+var galeryID8=new ObjectId()
 db.toursTable.insert({	
 'tourID':a8,
 'languageID':geoID,
@@ -510,7 +825,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID8,
 })
 
 
@@ -529,7 +844,7 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID8,
 })
 
 
@@ -548,11 +863,19 @@ db.toursTable.insert({
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
 'MainPageFlag':'Y',
-'galeryID':galeryID,
+'galeryID':galeryID8,
 })
-
+/*
+db.galeryTable.insert({
+	'galeryID':galeryID8,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti_galery1.jpg',
+	'mainImageFlag':'Y'
+})
+*/
 //_____________________________________IMERETI___________________________________________
 
+var galeryID9=new ObjectId()
 db.toursTable.insert({	
 'tourID':a9,
 'languageID':geoID,
@@ -567,8 +890,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'ტურის დეტალური აღწერა',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID9,
 })
 
 
@@ -586,8 +909,8 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Tour Details',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID9,
 })
 
 
@@ -605,13 +928,54 @@ db.toursTable.insert({
 'tourDetailLongHeaderName':'Oписание тура:',
 'tourPrice':'150',
 'tourPriceCurrency':'GEL',
-'MainPageFlag':'Y',
-'galeryID':galeryID,
+'MainPageFlag':'N',
+'galeryID':galeryID9,
 })
 
 
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti1.jpg',
+	'mainImageFlag':'Y'
+})
 
-
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti2.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti3.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti4.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti5.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti6.jpg',
+	'mainImageFlag':'n'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID9,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/imereti/imereti7.jpg',
+	'mainImageFlag':'n'
+})
 
 //_______________________________________________________________________________________
 raceID=new ObjectId()

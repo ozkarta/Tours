@@ -14,8 +14,6 @@ var tourMailBodyHTML='<!DOCTYPE html><html><head><style>table, th, td {    borde
 
 
 var initializeSession =function(req,callback){
-//console.log(req.url);
-//console.dir(req.query.language);
 
 
 	if (req.session.user===undefined){
@@ -231,14 +229,18 @@ var tourPreLoad=function(req,callback){
 			db.getGaleryHeader(galeryID,function(galeryHeader){
 				//var galeryID=galeryHeader[0]._id.toString();
 				if(galeryHeader[0]!==undefined){
+					console.log('!!!!!!!!!!ar dhedis galereis gasaketeblad');
 					var effDateGalery=galeryHeader[0].effDate;
 					var galeryImageURL=galeryHeader[0].galeryImageURL;
 
 					var galery=new screener.galeryItem(galeryID,effDateGalery,galeryImageURL);
 					req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,galery));
-					//console.dir(req.session.user.screener.tours);
+					console.log('______________________________________________')
+					console.dir(req.session.user.screener.tours);
 					callback1();
 				}else{
+					console.log('!!!!!!!!!!shevida');
+					
 					req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,undefined));
 					callback1();
 				}
@@ -302,7 +304,8 @@ var tourDetailPreLoad=function(req,callback){
 				var tourDetailLong=result[itemNum].tourDetailLong;
 				var tourDetailLongHeaderName=result[itemNum].tourDetailLongHeaderName;
 				var galeryID=result[itemNum].galeryID.toString();
-
+				var price=result[itemNum].price;
+				var priceCurrency=result[itemNum].priceCurrency;
 				db.getGaleryHeader(galeryID,function(galeryHeader){
 					if(galeryHeader[0]!==undefined){
 						//var galeryID=galeryHeader[0]._id.toString();
@@ -310,11 +313,13 @@ var tourDetailPreLoad=function(req,callback){
 						var galeryImageURL=galeryHeader[0].galeryImageURL;
 
 						var galery=new screener.galeryItem(galeryID,effDateGalery,galeryImageURL);
-						req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,galery));
+						req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,galery));
 						//console.dir(req.session.user.screener.tours);
+						console.log('______________________________________________')
+						console.dir(req.session.user.screener.tours);
 						callback();
 					}else{
-						req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,undefined));
+						req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,undefined));
 						//console.dir(req.session.user.screener.tours);
 						callback();
 					}
@@ -341,17 +346,18 @@ var galeryDetailPreLoad=function(req,callback){
 
 
 var bookTripPreLoad=function(req,callback){
-	var  fName=req.body.fname;
 
-	var  lName=req.body.lname;
-
-	var  birthDate=req.body.bdate;
-	var  idNumber=req.body.idNumber;
-	var  mail=req.body.mail;
-	var  phoneNumber=req.body.cellNumber;
-	var quantity=req.body.quantity;
-	var raceID=req.body.raceID;
-	var raceName=req.body.raceName;
+	var myJSON=req.body;
+	//console.dir(myJSON);
+	var  fName=myJSON.fname;
+	var  lName=myJSON.lname;
+	var  birthDate=myJSON.bdate;
+	var  idNumber=myJSON.idNumber;
+	var  mail=myJSON.mail;
+	var  phoneNumber=myJSON.cellNumber;
+	var quantity=myJSON.quantity;
+	var raceID=myJSON.raceID;
+	var raceName=myJSON.raceName;
 
 	var mailBody=tripMailBodyHTML
 	mailBody=mailBody.replace('@fname@',fName);
@@ -382,9 +388,10 @@ var bookTripPreLoad=function(req,callback){
 
 	transporter.sendMail(mailOptions, function(error, info){
 	    if(error){
-	        console.log(error);
-	    }
-	    console.log('Message sent: ' + info.response);
+	        callback('-1');
+	    }else{
+	    	callback('1');
+		}
 	});
 }
 var bookTourPreLoad=function(req,callback){
@@ -429,9 +436,11 @@ var bookTourPreLoad=function(req,callback){
 
 	transporter.sendMail(mailOptions, function(error, info){
 	    if(error){
-	        console.log(error);
+	        callback('-1');
+	    }else{
+	    	callback('1');
 	    }
-	    console.log('Message sent: ' + info.response);
+	    
 	});
 }
 
@@ -526,7 +535,12 @@ router.post('/bookTrip',function(req,res,next){
 	initializeSession(req,function(){
 		console.log('____________________MAILER_START________________________________')
 
-		bookTripPreLoad(req,function(){
+		bookTripPreLoad(req,function(status){
+			if(status==='-1'){
+				res.send({'status':'-1'})
+			}else{
+				res.send({'status':'1'})
+			}
 			console.log('____________________MAILER_END________________________________')
 		});
 	});
@@ -536,7 +550,12 @@ router.post('/bookTour',function(req,res,next){
 	initializeSession(req,function(){
 		console.log('____________________MAILER_START________________________________')
 
-		bookTourPreLoad(req,function(){
+		bookTourPreLoad(req,function(status){
+			if(status==='-1'){
+				res.send({'status':'-1'})
+			}else{
+				res.send({'status':'1'})
+			}
 			console.log('____________________MAILER_END________________________________')
 		});
 	});

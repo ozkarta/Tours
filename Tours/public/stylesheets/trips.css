@@ -24,17 +24,16 @@
 .trips-thumbnail img {
     padding-right: 10px;
     /*min-height:20px; */
-    height: 184px;
+        height: 236px;
+    width: 348px;
 }
 
-.trips-thumbnail {
-    margin-top: 15px;
-    /*height: 260px;*/
-}
+
 
 .trips-thumbnail button {
-    float: right;
-    margin-top: -25px;
+    bottom: 10px;
+    right: 18px;
+    position: absolute;
 }
 
  @media screen and (max-width: 415px){
@@ -65,7 +64,11 @@
 }
 */
 .trips-thumbnail {
+    margin-top: 15px;
     border: 10px solid #ffff33;
+    min-height: 264px;
+    position: relative;
+
 }
 
 

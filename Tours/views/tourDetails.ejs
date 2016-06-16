@@ -6,20 +6,20 @@ function getHardCode(varName){
         var item=locals.user.screener.hardCodes[i];
             if(item.variableName==varName){
                 //console.dir(item);
-                console.log('looking for '+locals.user.defaultLanguage)
+                //console.log('looking for '+locals.user.defaultLanguage)
                 if(locals.user.defaultLanguage==='ქართული'){
-                    console.log('found  kartulshi')
-                    console.log(item.geoValue);
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
                     return item.geoValue;
                     
                 }
                 if(locals.user.defaultLanguage=='English'){
-                    console.log('found  inglisurshi');
+                    //console.log('found  inglisurshi');
                     return item.engValue;
                     
                 }
                 if(locals.user.defaultLanguage=='русский'){
-                    console.log('found rusulshi');
+                    //console.log('found rusulshi');
                     return item.rusValue
                     
                 }
@@ -35,15 +35,11 @@ function getHardCode(varName){
 %>
 
 
-<div class="tour-details-background" style='background-image: url("<%=locals.user.screener.tours[0].mainImageURL %>")'>
-</div>
-
-
-<%  console.dir(locals.user.screener);
+<%  //console.dir(locals.user.screener);
 
     if(locals.user!==undefined){
         if(locals.user.screener.tourDetailID!=='' & locals.user.screener.tourDetailID!==undefined){
-            console.dir(locals.user.screener.tours);
+            //console.dir(locals.user.screener.tours);
             locals.user.screener.tours.forEach(function(tour){
             //console.dir(tour);
             //console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
@@ -72,7 +68,7 @@ function getHardCode(varName){
                                 <%
                                     if (tour.galery!==undefined){
                                 %>
-                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span><%=getHardCode('@ablum')%></h3>
+                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span><%=getHardCode('@album')%></h3>
                                 <div class="album-in-tour-details col-xs-12">
                                     <a href="galeryDetail?galeryID=<%=tour.galery.galeryID%>">
                                         <div class="col-sm-9 col-sm-offset-1 min-size det-alb-backg">
@@ -96,36 +92,39 @@ function getHardCode(varName){
                                 <div class="row">
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@fname')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@fname')%>" name="fname">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@fname')%>" name="fname">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@lname')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@lname')%>" name="lname">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@lname')%>" name="lname">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@birthDate')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@birthDate')%>" name="bdate">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@birthDate')%>" name="bdate">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@idNumber')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@idNumber')%>" name="idNumber">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@idNumber')%>" name="idNumber">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@mail')%></label>
-                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="<%=getHardCode('@mail')%>" name="mail">
+                                        <input type="email" class="form-control" id="exampleInputPassword1" required="true" placeholder="<%=getHardCode('@mail')%>" name="mail">
                                     </div>
                                     <div class="col-md-4 inputContainer">
                                         <label for="exampleInputFile"><%=getHardCode('@cellNumber')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@cellNumber')%>" name="cellNumber">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@cellNumber')%>" name="cellNumber">
                                     </div>
                                      <div class="col-md-4 inputContainer">
                                         <label for="exampleInputPassword1"><%=getHardCode('@number')%></label>
-                                        <input type="text" class="form-control" placeholder="<%=getHardCode('@number')%>" name="quantity">
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@number')%>" name="quantity">
                                      </div>
                                      <input type="hidden" name="tourID" value="<%=tour.tourID%>"/>
                                      <input type="hidden" name="tourName" value="<%=tour.tourName%>"/>
+                                     <succ style="display:none"><%=getHardCode('@success')%></succ>
+                                        
+                                     <err style="display:none"><%=getHardCode('@error')%></err>
                                 </div>
-                                <button type="submit" class="btn btn-success success submitForm"><%=getHardCode('@book')%></button>
+                                <button type="submit" class="btn btn-success success submitForm" onclick=" myFunction(this);return false;"><%=getHardCode('@book')%></button>
                             </form>
                         </div>
                     </div>
@@ -140,5 +139,72 @@ function getHardCode(varName){
 
 
 
+<script type="text/javascript">
+    
 
+     function myFunction(elem){
+
+        //alert('clicked')
+        console.dir(elem);
+        var form=$(elem).parents('form:first');
+         form.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+          form.find("err").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+        //console.dir(form);
+        var jsonToPost='{'
+        var i=0;
+        var responseJSON=undefined;
+        form.find("input").each(function(){
+            //console.log($(this).attr('name')+'_____'+$(this).val());
+            //console.log();
+            var mark=','
+            if(i==0){
+                mark='';
+            }
+            jsonToPost=jsonToPost+mark+'\"'+$(this).attr('name')+'\"'+':'+'\"'+$(this).val()+'\"';
+            //console.log(jsonToPost);
+
+            i=i+1;
+        })
+        jsonToPost=jsonToPost+'}';
+        console.log(jsonToPost);
+        //alert(document.location.origin);
+        //alert(window.location.hostname)
+
+        xhr = new XMLHttpRequest();
+        var url = document.location.origin+'/bookTour';
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                responseJSON = JSON.parse(xhr.responseText);  
+                if(responseJSON!==undefined){
+                    if(responseJSON.status=='1'){
+                        //alert('success');
+                        form.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:inline')
+                        });
+                    }else{
+                        //alert('span');
+                        form.find("err").each(function(){
+                            //$(this).html('error')
+                            $(this).attr('style','display:inline')
+                        });
+                    }
+                }              
+            }
+        }
+        xhr.send(jsonToPost);
+
+        
+    }
+
+
+</script>
 
