@@ -1,9 +1,12 @@
 
-.galery{margin-top:70px;}
+.galery{
+    margin-top:70px;
+    height: 70vh;
+}
 
 .galery img {
     padding: 5px 8px;
-    /*margin: 0 auto;*/
+    height: 28vh;
 }
 
 .album-title {

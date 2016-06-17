@@ -1,0 +1,87 @@
+/*
+.tours-background {
+    background-image: url("../images/system/garden.jpg");
+    background-size: cover;
+	background-position: 0% 85%;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+}
+*/
+
+/*navbaris gamchvirvaloba*/
+
+
+.tours a {
+    text-decoration: none;
+}
+
+.geo-tours {
+    text-align: center;
+    margin-bottom: 30px;
+/*    background: rgba(72, 134, 234, 1);
+    background: -moz-linear-gradient(left, rgba(72, 134, 234, 1) 0%, rgba(72, 134, 234, 1) 31%, rgba(73, 30, 230, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(72, 134, 234, 1)), color-stop(31%, rgba(72, 134, 234, 1)), color-stop(100%, rgba(73, 30, 230, 1)));
+    background: -webkit-linear-gradient(left, rgba(72, 134, 234, 1) 0%, rgba(72, 134, 234, 1) 31%, rgba(73, 30, 230, 1) 100%);
+    background: -o-linear-gradient(left, rgba(72, 134, 234, 1) 0%, rgba(72, 134, 234, 1) 31%, rgba(73, 30, 230, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(72, 134, 234, 1) 0%, rgba(72, 134, 234, 1) 31%, rgba(73, 30, 230, 1) 100%);
+    background: linear-gradient(to right, rgba(72, 134, 234, 1) 0%, rgba(72, 134, 234, 1) 31%, rgba(73, 30, 230, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4886ea', endColorstr='#491ee6', GradientType=1);
+*/}
+
+.geo-tours h1 {
+    padding: 22px 0;
+}
+
+@media only screen and (max-width: 550px) {
+    .geo-tours h1 {
+        font-size: 23px;
+    }
+}
+
+.tours-thumbnail {
+    background-color: #f2f3f4;
+        height: 43vh;
+        position: relative;
+}
+
+.tours-thumbnail:hover {
+    background-color: #fffdfd;
+    border: 1px solid #777;
+}
+
+.tours-thumbnail img {
+    padding-right: 10px;
+    height: 25vh;
+    width:50%;
+}
+
+.tours-thumbnail p {
+    padding-bottom: 20px;
+}
+
+.caption h3 {
+    text-align: center;
+}
+
+.price {
+    font-size: 18px;
+    color: #59f;
+    padding: 3px 15px;
+    bottom: 15px;
+    position: absolute;
+    right: 0;
+}
+
+
+.simple-details h6{
+        font-weight: bold;
+    display: inline;
+    font-size: 15px;
+}
+.simple-details p{
+    display: inline;
+}
+.simple-details h6:before{
+    content:"\a";
+    white-space: pre;
+}

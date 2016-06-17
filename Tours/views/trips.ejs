@@ -51,8 +51,8 @@ function getHardCode(varName){
                             <p><%=item.raceDescription %></p>
                             <button type="button" class="btn btn-primary clicked"><%=getHardCode('@book') %></button>
 
-                            <div class='hidden trip-form'>
-                                <form action="" >
+                            <div class='hidden trip-form' >
+                                <form method="get" action="" onsubmit='return myFunction(this)'>
                                     <div class="row">
                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputPassword1"><%=getHardCode('@fname') %></label>
@@ -79,19 +79,22 @@ function getHardCode(varName){
                                             <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@cellNumber') %>" name="cellNumber">
                                         </div>
                                        
-                                         <div class="col-md-4 inputContainer">
+                                         <div class="col-md-4 col-xs-12 inputContainer">
                                             <label for="exampleInputPassword1"><%=getHardCode('@number')%></label>
                                             <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@number')%>" name="quantity">
                                          </div>
                                          <span id="statusMessage" style=""></span>
+                                        
+                                    </div>
+                                    <div>
                                         <input type="hidden" name="raceID" value="<%=item.raceID%>"/>
                                         <input type="hidden" name="raceName" value="<%=item.raceName%>"/>
                                         
                                         <succ style="display:none"><%=getHardCode('@success')%></succ>
                                         
                                         <err style="display:none"><%=getHardCode('@error')%></err>
-                                    </div>
-                                    <button type="submit" class="btn btn-success success submitForm" onclick=" myFunction(this);return false;" ><%=getHardCode('@submit') %></button>
+                                    <div>
+                                    <button type="submit" class="btn btn-success success submitForm" ><%=getHardCode('@submit') %></button>
                                 </form>
                             </div>
                         </div>
@@ -107,26 +110,32 @@ function getHardCode(varName){
 
         %>
 <script type="text/javascript">
-    
-
-     function myFunction(elem){
-
-        //alert('clicked')
+  
+     function myFunction(form){
+       
+        //alert('clicked');
+        var elem=$(form);
+        //alert(elem);
         //console.dir(elem);
-        var form=$(elem).parents('form:first');
-         form.find("succ").each(function(){
+        //var form=$(elem).parents('form:first');
+        //var form=elem;
+         elem.find("succ").each(function(){
                             //$(this).html('success')
                             $(this).attr('style','display:none')
                         });
-          form.find("err").each(function(){
+          elem.find("err").each(function(){
                             //$(this).html('success')
                             $(this).attr('style','display:none')
                         });
+           // if(!form.checkValidity()){
+           //      return false;
+           //   }
         //console.dir(form);
+        //form.validate();
         var jsonToPost='{'
         var i=0;
         var responseJSON=undefined;
-        form.find("input").each(function(){
+        elem.find("input").each(function(){
             //console.log($(this).attr('name')+'_____'+$(this).val());
             //console.log();
             var mark=','
@@ -146,6 +155,7 @@ function getHardCode(varName){
         xhr = new XMLHttpRequest();
         var url = document.location.origin+'/bookTrip';
         xhr.open("POST", url, true);
+
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.onreadystatechange = function () { 
             if (xhr.readyState == 4 && xhr.status == 200) {
@@ -153,13 +163,13 @@ function getHardCode(varName){
                 if(responseJSON!==undefined){
                     if(responseJSON.status=='1'){
                         //alert('success');
-                        form.find("succ").each(function(){
+                        elem.find("succ").each(function(){
                             //$(this).html('success')
                             $(this).attr('style','display:inline')
                         });
                     }else{
                         //alert('span');
-                        form.find("err").each(function(){
+                        elem.find("err").each(function(){
                             //$(this).html('error')
                             $(this).attr('style','display:inline')
                         });
@@ -170,6 +180,7 @@ function getHardCode(varName){
         xhr.send(jsonToPost);
 
         
+        return false;
     }
 
 

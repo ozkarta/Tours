@@ -68,8 +68,28 @@
     border: 10px solid #ffff33;
     min-height: 264px;
     position: relative;
-
+     border: 10px solid rgba(132, 165, 144, 0.61);
 }
+
+.trips-thumbnail:hover{
+border: 10px solid rgba(51, 172, 91, 0.61);
+background-color: #dee;
+}
+
+
+/*.tour-thumbnail {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    border: 10px solid rgba(132, 165, 144, 0.61);
+}
+.tour-thumbnail:hover{
+border: 10px solid rgba(51, 172, 91, 0.61);}
+*/
+
+
 
 
 /*foms section*/
