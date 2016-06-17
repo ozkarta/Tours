@@ -12,7 +12,7 @@ var db_connector=function(){
 					var toursCollection=db.collection('toursTable');
 					toursCollection.find({'languageID': languageID}).sort({'effDate':-1}).toArray(function(err,docs){
 						
-						console.log(docs.length);
+						//console.log(docs.length);
 						callback(docs);
 					});
 				});
@@ -91,7 +91,7 @@ var db_connector=function(){
 			this.mongo.connect(this.url,function(err,db){
 					var galeryCollection=db.collection('galeryTable');
 					galeryCollection.find({'galeryID': galeryID,'mainImageFlag':'Y'}).toArray(function(err,docs){
-						console.dir(docs);
+						//console.dir(docs);
 						callback(docs);
 					});
 				});
@@ -150,7 +150,7 @@ var db_connector=function(){
 			var languageCollection=db.collection('languageTable');
 			languageCollection.find({'language':language}).toArray(function(err,docs){
 				
-					console.log('language ID was found ....'+docs[0]._id.toString());
+					//console.log('language ID was found ....'+docs[0]._id.toString());
 					callback(docs[0]._id.toString());
 				});
 			});

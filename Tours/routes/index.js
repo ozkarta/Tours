@@ -20,9 +20,9 @@ var initializeSession =function(req,callback){
 		var newUser=new user.user();		
 		if(req.query.language!=='' & req.query.language!==undefined){
 			newUser.defaultLanguage=req.query.language;	
-			console.log('default language is  set from URL ... ');		
+			//console.log('default language is  set from URL ... ');		
 		}
-		console.log(newUser.defaultLanguage);
+		//console.log(newUser.defaultLanguage);
 		db.getLanguageID(newUser.defaultLanguage,function(langId){
 				if(langId!==undefined){
 					newUser.defaultLanguageID=langId;
@@ -55,7 +55,7 @@ var initializeSession =function(req,callback){
 }
 
 var indexPreLoad=function(req,callback){
-	console.log('index preload was invoked');
+	//console.log('index preload was invoked');
 	req.session.user.screener.tours=[];
 	db.getToursForMain(req.session.user.defaultLanguageID,function(result){
 	if(result!==undefined){
@@ -80,7 +80,7 @@ var indexPreLoad=function(req,callback){
 			var galeryID=item.galeryID.toString();
 
 			db.getGaleryHeader(galeryID,function(galeryHeader){
-				console.dir(galeryHeader);
+				//console.dir(galeryHeader);
 				if(galeryHeader[0]!==undefined){
 					//var galeryID=galeryHeader[0]._id.toString();
 					var effDateGalery=galeryHeader[0].effDate;
@@ -103,7 +103,7 @@ var indexPreLoad=function(req,callback){
 				req.session.user.screener.races=[];
 							db.getRacesForMain(req.session.user.defaultLanguageID,function(result){
 								//console.dir(result);
-								console.log('requesting Races For Main')
+								//console.log('requesting Races For Main')
 								for(race in result){
 									//console.dir(result[race]);
 									var raceId=result[race]._id.toString();
@@ -148,17 +148,17 @@ var tourPreLoad=function(req,callback){
 			db.getGaleryHeader(galeryID,function(galeryHeader){
 				//var galeryID=galeryHeader[0]._id.toString();
 				if(galeryHeader[0]!==undefined){
-					console.log('!!!!!!!!!!ar dhedis galereis gasaketeblad');
+					//console.log('!!!!!!!!!!ar dhedis galereis gasaketeblad');
 					var effDateGalery=galeryHeader[0].effDate;
 					var galeryImageURL=galeryHeader[0].galeryImageURL;
 
 					var galery=new screener.galeryItem(galeryID,effDateGalery,galeryImageURL);
 					req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,galery));
-					console.log('______________________________________________')
-					console.dir(req.session.user.screener.tours);
+					//console.log('______________________________________________')
+					//console.dir(req.session.user.screener.tours);
 					callback1();
 				}else{
-					console.log('!!!!!!!!!!shevida');
+					//console.log('!!!!!!!!!!shevida');
 					
 					req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,undefined));
 					callback1();
@@ -209,10 +209,10 @@ var galeryPreLoad=function(req,callback){
 			
 			db.getNameForGalery(item.galeryID.toString(),req.session.user.defaultLanguageID,function(docs2){
 				//console.dir(docs2.toString());
-				console.log(helperArray.length);
+				//console.log(helperArray.length);
 				var called=false;
 				for(i =0;i< helperArray.length;i++){
-					console.log(helperArray[i].galeryID+' VS '+item.galeryID)
+					//console.log(helperArray[i].galeryID+' VS '+item.galeryID)
 					if(helperArray[i].galeryID.toString()==item.galeryID.toString()){
 						console.log('fin')
 						called=true;
@@ -220,12 +220,12 @@ var galeryPreLoad=function(req,callback){
 					}
 				}
 				if(called===false){
-					console.log('doing the job');
+					//console.log('doing the job');
 					if(docs2[0].tourName!==undefined){
 							myArray.push(new screener.mainGaleryItem(item.galeryID.toString(),docs2[0].tourName,item.galeryImageURL));
 					}
 					helperArray.push(item);
-					console.log(helperArray.length)
+					//console.log(helperArray.length)
 					callback1();
 				}
 				
@@ -250,8 +250,8 @@ var contactPreLoad=function(req,callback){
 }
 var tourDetailPreLoad=function(req,callback){
 
-		console.log(req.query.tourId);
-		console.log('languageID is __ '+req.session.user.defaultLanguageID);
+		//console.log(req.query.tourId);
+		//console.log('languageID is __ '+req.session.user.defaultLanguageID);
 		req.session.user.screener.tourDetailID=req.query.tourId;
 		req.session.user.screener.tours=[];
 		db.getTourForDetail(req.query.tourId,req.session.user.defaultLanguageID,function(result){
@@ -283,8 +283,8 @@ var tourDetailPreLoad=function(req,callback){
 								var galery=new screener.galeryItem(galeryID,effDateGalery,galeryImageURL);
 								req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,galery));
 								//console.dir(req.session.user.screener.tours);
-								console.log('______________________________________________')
-								console.dir(req.session.user.screener.tours);
+								//console.log('______________________________________________')
+								//console.dir(req.session.user.screener.tours);
 								callback(true);
 							}else{
 								req.session.user.screener.tours.push(new screener.tourItem(Id,effdate,mainImageURL,descriptionImageURL,tourName,tourDescriptionShort,tourDescriptionLong,aboutPlaceShort,aboutPlaceLong,tourDetailShort,tourDetailShortHeaderName,tourDetailLong,tourDetailLongHeaderName,price,priceCurrency,undefined));
@@ -308,10 +308,10 @@ var tourDetailPreLoad=function(req,callback){
 }
 var galeryDetailPreLoad=function(req,callback){
 	var galeryID=req.query.galeryID;
-	console.log('galery ID is '+galeryID);
+	//console.log('galery ID is '+galeryID);
 	db.getGalery(galeryID,function(result){
 		if(result!==undefined && result.length!==0){
-			console.dir(result);
+			//console.dir(result);
 			req.session.user.screener.galery=[];
 
 			result.forEach(function(item){
@@ -427,8 +427,8 @@ var bookTourPreLoad=function(req,callback){
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('index  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('index  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
 		indexPreLoad(req,function(errFree){
 			if(errFree){
 				res.render('index', {locals:{'user':req.session.user}});
@@ -446,8 +446,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/tours', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('Tours  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('Tours  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
 		tourPreLoad(req,function(errFree){
 			if(errFree){
 				res.render('tours',{locals:{'user':req.session.user}});
@@ -465,8 +465,8 @@ router.get('/tours', function(req, res, next) {
 
 router.get('/trips', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('trips  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('trips  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
 
 		tripsPreLoad(req,function(errFree){
 			if(errFree){
@@ -487,8 +487,8 @@ router.get('/galery', function(req, res, next) {
 	initializeSession(req,function(){
 		galeryPreLoad(req,function(errFree){
 				if(errFree){
-					console.log('galery  was  requested by GET');
-					console.log(req.connection.remoteAddress);
+					//console.log('galery  was  requested by GET');
+					//console.log(req.connection.remoteAddress);
 			  		res.render('galery', {locals:{'user':req.session.user}});
 				}else{
 					res.render('error',{'error': {
@@ -503,8 +503,8 @@ router.get('/galery', function(req, res, next) {
 
 router.get('/about', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('about  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('about  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
   		res.render('about', {locals:{'user':req.session.user}});
 	});
 	
@@ -512,16 +512,16 @@ router.get('/about', function(req, res, next) {
 
 router.get('/contact', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('contact  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('contact  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
   		res.render('contact',{locals:{'user':req.session.user}});
 	});
 	
 });
 router.get('/tourDetails', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('tourDetail  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('tourDetail  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
 		if(req.query.tourId!==undefined ){
 				tourDetailPreLoad(req,function(errFree){
 				if(errFree){
@@ -547,15 +547,15 @@ router.get('/tourDetails', function(req, res, next) {
 });
 router.get('/galeryDetail', function(req, res, next) {
 	initializeSession(req,function(){
-		console.log('galeryDetail  was  requested by GET');
-		console.log(req.connection.remoteAddress);
+		//console.log('galeryDetail  was  requested by GET');
+		//console.log(req.connection.remoteAddress);
 		// galeryDetailPreLoad(req,function(){
 		// 	res.render('galeryDetail',{locals:{'user':req.session.user}});
 		// });
 
 		if(req.query.galeryID!==undefined ){
 				galeryDetailPreLoad(req,function(errFree){
-					console.log(errFree);
+					//console.log(errFree);
 					if(errFree){
 						res.render('galeryDetail',{locals:{'user':req.session.user}});
 					}else{
@@ -579,7 +579,7 @@ router.get('/galeryDetail', function(req, res, next) {
 //_______________POSTS_________________________
 router.post('/bookTrip',function(req,res,next){
 	initializeSession(req,function(){
-		console.log('____________________MAILER_START________________________________')
+		//console.log('____________________MAILER_START________________________________')
 
 		bookTripPreLoad(req,function(status){
 			if(status==='-1'){
@@ -587,14 +587,14 @@ router.post('/bookTrip',function(req,res,next){
 			}else{
 				res.send({'status':'1'})
 			}
-			console.log('____________________MAILER_END________________________________')
+			//console.log('____________________MAILER_END________________________________')
 		});
 	});
 });
 
 router.post('/bookTour',function(req,res,next){
 	initializeSession(req,function(){
-		console.log('____________________MAILER_START________________________________')
+		//console.log('____________________MAILER_START________________________________')
 
 		bookTourPreLoad(req,function(status){
 			if(status==='-1'){
@@ -602,7 +602,7 @@ router.post('/bookTour',function(req,res,next){
 			}else{
 				res.send({'status':'1'})
 			}
-			console.log('____________________MAILER_END________________________________')
+			//console.log('____________________MAILER_END________________________________')
 		});
 	});
 });
