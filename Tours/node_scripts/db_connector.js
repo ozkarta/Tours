@@ -7,7 +7,8 @@ var db_connector=function(){
 	console.log('db_connector initialized');
 
 	db_connector.prototype.getTours=function(languageID,callback){
-		this.mongo.connect(this.url,function(err,db){
+		try{
+			this.mongo.connect(this.url,function(err,db){
 					var toursCollection=db.collection('toursTable');
 					toursCollection.find({'languageID': ObjectId(languageID)}).sort({'effDate':-1}).toArray(function(err,docs){
 						
@@ -15,7 +16,36 @@ var db_connector=function(){
 						callback(docs);
 					});
 				});
+		}catch(err){
+			console.dir(err);
+			callback(undefined);
+		}
 	}
+
+	db_connector.prototype.getNameForGalery=function(galeryID,languageID,callback){
+		this.mongo.connect(this.url,function(err,db){
+			var mycollection=db.collection('toursTable');
+			mycollection.find({'galeryID':ObjectId(galeryID),'languageID':ObjectId(languageID)}).toArray(function(err,docs){
+			//mycollection.distinct('galeryID',{'galeryID':ObjectId(galeryID),'languageID':ObjectId(languageID)},function(err,docs){
+				//console.dir(docs)
+				callback(docs);
+			});
+		})
+	}
+	db_connector.prototype.getGaleryForMe=function(callback){
+		this.mongo.connect(this.url,function(err,db){
+			var mycollection=db.collection('galeryTable');
+			mycollection.find({'mainImageFlag':'Y'}).toArray(function(err,docs){
+			
+			//mycollection.distinct("galeryImageURL",function(err,docs){
+				//console.dir(docs);
+				callback(docs);
+			})
+				
+			//});
+		})
+	}
+
 	db_connector.prototype.getToursForMain=function(languageID,callback){
 		this.mongo.connect(this.url,function(err,db){
 					var toursCollection=db.collection('toursTable');
@@ -30,7 +60,10 @@ var db_connector=function(){
 		this.mongo.connect(this.url,function(err,db){
 					var toursCollection=db.collection('toursTable');
 					toursCollection.find({'tourID': ObjectId(tourID),'languageID':ObjectId(languageID)}).toArray(function(err,docs){
-						callback(docs);
+						
+						var arr=[];
+						arr.push(docs[0])
+						callback(arr);
 					});
 				});
 	}

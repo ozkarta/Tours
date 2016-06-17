@@ -58,6 +58,11 @@ var galeryItem=function(galeryID,effDate,imageURL){
 	//this.galeryName=galeryName;
 	this.imageURL=imageURL;
 }
+var mainGaleryItem=function(galeryID,galeryName,galeryImage){
+	this.galeryID=galeryID
+	this.galeryName=galeryName
+	this.galeryImage=galeryImage
+}
 
 var aboutUsItem=function(headerName,detail){
 	this.headerName=headerName;
@@ -78,6 +83,7 @@ var screener=function(){
     this.hardCodes=[];
     this.currentHardCode='asdasd';
     this.language;
+    this.mainGalery=[];
 
 	screener.prototype.init=function(){
 		this.initMenu();
@@ -167,3 +173,4 @@ module.exports.screener=screener;
 module.exports.raceItem=raceItem;
 module.exports.tourItem=tourItem;
 module.exports.galeryItem=galeryItem;
+module.exports.mainGaleryItem=mainGaleryItem;

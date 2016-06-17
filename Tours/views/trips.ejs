@@ -6,20 +6,20 @@ function getHardCode(varName){
         var item=locals.user.screener.hardCodes[i];
             if(item.variableName==varName){
                 //console.dir(item);
-                console.log('looking for '+locals.user.defaultLanguage)
+                //console.log('looking for '+locals.user.defaultLanguage)
                 if(locals.user.defaultLanguage==='ქართული'){
-                    console.log('found  kartulshi')
-                    console.log(item.geoValue);
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
                     return item.geoValue;
                     
                 }
                 if(locals.user.defaultLanguage=='English'){
-                    console.log('found  inglisurshi');
+                    //console.log('found  inglisurshi');
                     return item.engValue;
                     
                 }
                 if(locals.user.defaultLanguage=='русский'){
-                    console.log('found rusulshi');
+                    //console.log('found rusulshi');
                     return item.rusValue
                     
                 }
@@ -112,7 +112,7 @@ function getHardCode(varName){
      function myFunction(elem){
 
         //alert('clicked')
-        console.dir(elem);
+        //console.dir(elem);
         var form=$(elem).parents('form:first');
          form.find("succ").each(function(){
                             //$(this).html('success')
@@ -139,7 +139,7 @@ function getHardCode(varName){
             i=i+1;
         })
         jsonToPost=jsonToPost+'}';
-        console.log(jsonToPost);
+        //console.log(jsonToPost);
         //alert(document.location.origin);
         //alert(window.location.hostname)
 

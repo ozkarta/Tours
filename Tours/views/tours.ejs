@@ -6,20 +6,20 @@ function getHardCode(varName){
         var item=locals.user.screener.hardCodes[i];
             if(item.variableName==varName){
                 //console.dir(item);
-                console.log('looking for '+locals.user.defaultLanguage)
+                //console.log('looking for '+locals.user.defaultLanguage)
                 if(locals.user.defaultLanguage==='ქართული'){
-                    console.log('found  kartulshi')
-                    console.log(item.geoValue);
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
                     return item.geoValue;
                     
                 }
                 if(locals.user.defaultLanguage=='English'){
-                    console.log('found  inglisurshi');
+                    //console.log('found  inglisurshi');
                     return item.engValue;
                     
                 }
                 if(locals.user.defaultLanguage=='русский'){
-                    console.log('found rusulshi');
+                    //console.log('found rusulshi');
                     return item.rusValue
                     
                 }
@@ -53,7 +53,7 @@ function getHardCode(varName){
                         })
                         locals.user.screener.tours.forEach(function(tour){
                         //console.log('this is tour_________________-');
-                        console.dir(tour);
+                        //console.dir(tour);
                             %>
                                 <div class="col-sm-6">
                                     <a href="tourDetails?tourId=<%=tour.tourID%>">

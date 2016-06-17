@@ -92,3 +92,73 @@ function getHardCode(varName){
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+    
+
+     function myFunction(elem){
+
+        //alert('clicked')
+        console.dir(elem);
+        var form=$(elem).parents('form:first');
+         form.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+          form.find("err").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+        //console.dir(form);
+        var jsonToPost='{'
+        var i=0;
+        var responseJSON=undefined;
+        form.find("input").each(function(){
+            //console.log($(this).attr('name')+'_____'+$(this).val());
+            //console.log();
+            var mark=','
+            if(i==0){
+                mark='';
+            }
+            jsonToPost=jsonToPost+mark+'\"'+$(this).attr('name')+'\"'+':'+'\"'+$(this).val()+'\"';
+            //console.log(jsonToPost);
+
+            i=i+1;
+        })
+        jsonToPost=jsonToPost+'}';
+        console.log(jsonToPost);
+        //alert(document.location.origin);
+        //alert(window.location.hostname)
+
+        xhr = new XMLHttpRequest();
+        var url = document.location.origin+'/bookTrip';
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                responseJSON = JSON.parse(xhr.responseText);  
+                if(responseJSON!==undefined){
+                    if(responseJSON.status=='1'){
+                        //alert('success');
+                        form.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:inline')
+                        });
+                    }else{
+                        //alert('span');
+                        form.find("err").each(function(){
+                            //$(this).html('error')
+                            $(this).attr('style','display:inline')
+                        });
+                    }
+                }              
+            }
+        }
+        xhr.send(jsonToPost);
+
+        
+    }
+
+
+</script>

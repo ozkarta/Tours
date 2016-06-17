@@ -1,16 +1,27 @@
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
+
+
 db.languageTable.drop()
 db.toursTable.drop()
 db.galeryTable.drop()
 db.raceTable.drop()
 
 
-var engID=new ObjectId()
-var geoID=new ObjectId()
-var rusID=new ObjectId()
+var engID=guid()
+var geoID=guid()
+var rusID=guid()
 
-var a=new ObjectId()
-var galeryID=new ObjectId()
-var raceID=new ObjectId()
+var a=guid()
+var galeryID=guid()
+var raceID=guid()
 
 db.languageTable.insert({'_id':engID,'language':'English'})
 db.languageTable.insert({'_id':geoID,'language':'ქართული'})
@@ -18,25 +29,25 @@ db.languageTable.insert({'_id':rusID,'language':'русский'})
 
 //_______________________________ტურები
 //   English
-a=new ObjectId()
-a1=new ObjectId()
-a2=new ObjectId()
-a3=new ObjectId()
-a4=new ObjectId()
-a5=new ObjectId()
-a6=new ObjectId()
-a7=new ObjectId()
-a8=new ObjectId()
-a9=new ObjectId()
-a10=new ObjectId()
-a11=new ObjectId()
-a12=new ObjectId()
-a13=new ObjectId()
-a14=new ObjectId()
-a15=new ObjectId()
+a=guid()
+a1=guid()
+a2=guid()
+a3=guid()
+a4=guid()
+a5=guid()
+a6=guid()
+a7=guid()
+a8=guid()
+a9=guid()
+a10=guid()
+a11=guid()
+a12=guid()
+a13=guid()
+a14=guid()
+a15=guid()
 
-galeryID=new ObjectId()
-raceID=new ObjectId()
+galeryID=guid()
+raceID=guid()
 //____________________________________MTSKHETA____________________________________________________________
 db.toursTable.insert({	
 'tourID':a,
@@ -120,7 +131,7 @@ db.galeryTable.insert({
 	'mainImageFlag':'n'
 })
 //_______________________________________SVANETI_______________________________________________________
-var galeryID1=new ObjectId()
+var galeryID1=guid()
 
 db.toursTable.insert({	
 'tourID':a1,
@@ -183,8 +194,63 @@ db.galeryTable.insert({
 	'galeryImageURL':'images/website/svaneti/svaneti1.jpg',
 	'mainImageFlag':'Y'
 })
+
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti2.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti3.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti4.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti5.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti6.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti7.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti8.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti9.jpg',
+	'mainImageFlag':'N'
+})
+db.galeryTable.insert({
+	'galeryID':galeryID1,
+	'effDate':new Date(),
+	'galeryImageURL':'images/website/svaneti/svaneti10.jpg',
+	'mainImageFlag':'N'
+})
 //__________________________________SAMCXE_JAVAKHETI________________________________________________
-var galeryID2=new ObjectId()
+var galeryID2=guid()
 db.toursTable.insert({	
 'tourID':a2,
 'languageID':geoID,
@@ -319,7 +385,7 @@ db.galeryTable.insert({
 	'mainImageFlag':'N'
 })
 //________________________________________yazbegi__________________________________________________
-var galeryID3=new ObjectId();
+var galeryID3=guid();
 
 
 db.toursTable.insert({	
@@ -386,7 +452,7 @@ db.galeryTable.insert({
 })
 */
 //___________________________________tusheti_______________________________________
-var galeryID4=new ObjectId()
+var galeryID4=guid()
 db.toursTable.insert({	
 'tourID':a4,
 'languageID':geoID,
@@ -452,7 +518,7 @@ db.galeryTable.insert({
 })
 */
 //___________________________________________kaxeti_____________________________________
-var galeryID5=new ObjectId()
+var galeryID5=guid()
 db.toursTable.insert({	
 'tourID':a5,
 'languageID':geoID,
@@ -599,7 +665,7 @@ db.galeryTable.insert({
 	'mainImageFlag':'N'
 })
 //___________________________kakheti 2 dgiani____________________________________________
-var galeryID6=new ObjectId()
+var galeryID6=guid()
 db.toursTable.insert({	
 'tourID':a6,
 'languageID':geoID,
@@ -655,98 +721,10 @@ db.toursTable.insert({
 'MainPageFlag':'N',
 'galeryID':galeryID5,
 })
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti1.jpg',
-	'mainImageFlag':'Y'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti2.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti3.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti4.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti5.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti6.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti7.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti8.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti9.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti10.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti11.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti12.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti13.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti14.jpg',
-	'mainImageFlag':'N'
-})
-db.galeryTable.insert({
-	'galeryID':galeryID5,
-	'effDate':new Date(),
-	'galeryImageURL':'images/website/kaxeti/kaxeti15.jpg',
-	'mainImageFlag':'N'
-})
+
+
 //_______________________________GORI___________________________________________________
-var galeryID7=new ObjectId();
+var galeryID7=guid();
 db.toursTable.insert({	
 'tourID':a7,
 'languageID':geoID,
@@ -809,7 +787,7 @@ db.toursTable.insert({
 	'mainImageFlag':'Y'
 })*/
 //_______________________________________xevsureti______________________________________
-var galeryID8=new ObjectId()
+var galeryID8=guid()
 db.toursTable.insert({	
 'tourID':a8,
 'languageID':geoID,
@@ -875,7 +853,7 @@ db.galeryTable.insert({
 */
 //_____________________________________IMERETI___________________________________________
 
-var galeryID9=new ObjectId()
+var galeryID9=guid()
 db.toursTable.insert({	
 'tourID':a9,
 'languageID':geoID,
@@ -978,7 +956,7 @@ db.galeryTable.insert({
 })
 
 //_______________________________________________________________________________________
-raceID=new ObjectId()
+raceID=guid()
 db.raceTable.insert({
 	'raceID':raceID,
 	'languageID':engID,
@@ -1005,7 +983,7 @@ db.raceTable.insert({
 })
 
 
-raceID=new ObjectId()
+raceID=guid()
 db.raceTable.insert({
 	'raceID':raceID,
 	'languageID':engID,
