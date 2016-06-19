@@ -1,0 +1,30 @@
+
+ <div class="container">
+        <div class="galery">
+            <div class="row">
+                
+                <%
+                    if(locals.user!== undefined){
+                        locals.user.screener.mainGalery.forEach(function(item){
+                        %>
+                        <a href="/galeryDetail?galeryID=<%=item.galeryID%>">
+                            <div class="galery-album col-md-3 col-sm-6 col-sm-push-0 col-xs-8 col-md-push-0 col-xs-push-2  min-size">
+                                <img src="<%=item.galeryImage%>" alt="..." class="img-thumbnail">
+                                <h4 class="album-title text-center"><%=item.galeryName%></h4>
+                            </div>
+                        </a>
+
+                        <%
+                        });
+
+                    }
+
+                %>
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+    

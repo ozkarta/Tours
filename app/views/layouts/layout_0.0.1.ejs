@@ -1,0 +1,303 @@
+<%
+
+function getHardCode(varName){
+   if(locals.user!==undefined){
+        for(i in  locals.user.screener.hardCodes){
+        var item=locals.user.screener.hardCodes[i];
+            if(item.variableName==varName){
+                //console.dir(item);
+                //console.log('looking for '+locals.user.defaultLanguage)
+                if(locals.user.defaultLanguage==='ქართული'){
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
+                    return item.geoValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='English'){
+                    //console.log('found  inglisurshi');
+                    return item.engValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='русский'){
+                    //console.log('found rusulshi');
+                    return item.rusValue
+                    
+                }
+            }
+        }
+   }else{
+    return '';
+   }
+   
+}
+
+
+%>
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./stylesheets/bootstrap.min.css" >
+    <link rel="stylesheet" href="./stylesheets/owl.carousel.css">
+    <link rel="stylesheet" href="./stylesheets/owl.theme.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/tours.css">
+    <link rel="stylesheet" href="./stylesheets/trips.css">
+    <link rel="stylesheet" href="./stylesheets/galery.css">
+    <link rel="stylesheet" href="./stylesheets/about.css">
+    <link rel="stylesheet" href="./stylesheets/contact.css">
+    <link rel="stylesheet" href="./stylesheets/tour-details.css">
+    <link rel="stylesheet" href="./stylesheets/album-galery.css">
+    <link rel="stylesheet" href="./stylesheets/lightgallery.min.css">
+    <title>Mate Tours</title>
+</head>
+
+<body>
+    <div class="container-full">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                            <img src="images/system/logo.png" width="80" height="80" alt="Mate-Travel">
+                        </a>
+                    </div>
+                    <div id="navbar1" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <%if(locals.user!==undefined){
+
+                                 locals.user.screener.menu.forEach(function(item){
+                                    if(item.lang===locals.user.defaultLanguage){
+                                        
+                                        item.men.forEach(function(menu){
+                                            %>
+                                                <li><a href="<%=menu.action %>"><%=menu.name %></a></li>
+                                            <%   
+                                        });
+                                    }
+                                }); 
+                            }
+                            %>
+                        </ul>
+                    <!--    <ul class="nav navbar-nav">
+                            <li><a href="/">მთავარი</a></li>
+                            <li><a href="tours">ტურები</a></li>
+                            <li><a href="trips">რეისები</a></li>
+                            <li><a href="galery">გალერია</a></li>
+                            <li><a href="about">ჩვენს შესახებ</a></li>
+                            <li><a href="contact">კონტაქტი</a></li>
+                        </ul>
+                    
+                        <div class="language">
+                            <a href="" class="rus"></a>
+                            <a href="" class="eng"></a>
+                            <a href="" class="geo"></a>
+                        </div>
+                    -->
+                    <form method="GET" action="" id="chooserPoster"> 
+                      
+                        
+
+
+                         <!--select class="selectpicker" style=" position:absolute;right:5% ;top:30%" onchange="languageChooserSelectionChanged(this)">
+                          <%if(locals.user!==undefined){
+                                locals.user.screener.languageSupport.forEach(function(lang){
+                                //console.log(lang);
+                                    if(lang===locals.user.defaultLanguage){
+                                    %>
+                                        <option selected="true"><a href="#"><a href="" class=""><%=lang %></a></option>
+                                    <%
+                                    }else{
+                                        %>
+                                        <option ><a href="#"><a href="" class=""></a><%=lang %></option>
+                                        <%
+                                    }
+                               });
+                           }
+                           %>
+
+
+                        
+                        </select-->
+
+                        <div class="language">
+                            <a href="#" class="rus" value="русский" onClick="clickFunction(this)"></a>
+                            <a href="#" class="eng" value="English" onClick="clickFunction(this)"></a>
+                            <a href="#" class="geo" value="ქართული" onClick="clickFunction(this)"></a>
+                        </div>
+                         <input type="hidden" id="language" name="language"/>
+                         <% 
+                            if(locals.user!==undefined){
+                                if(locals.user.screener.tourDetailID!=='' & locals.user.screener.tourDetailID!==undefined){
+                                    %>
+                                        <input type="hidden" id="tourId" name="tourId" value="<%=locals.user.screener.tourDetailID %>"/>
+                                    <%
+                                }
+                            }
+                         %>
+
+                         
+                    </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+</div>
+
+<%- body %>
+
+
+
+
+
+
+
+    <footer class='footer'>
+        <div class="container">
+            <ul class="col-xs-12">
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/facebook.svg" width='40' height="40"></a>
+                </li>
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/youtube.svg" width='40' height="40"></a>
+                </li>
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/twitter.svg" width='40' height="40"></a>
+                </li>
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/email.svg" width='40' height="40"></a>
+                </li>
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/smartphone.svg" width='40' height="40"></a>
+                </li>
+                <li class="col-xs-offset-1">
+                    <a href=""><img src="images/system/skype.svg" width='40' height="40"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <script src="./javascripts/jquery.min.js"></script>
+    <script src="./javascripts/owl.carousel.js"></script>
+    <script src="./javascripts/bootstrap.min.js"></script>
+    <!--script src="javascripts/script.js"></script-->
+     <script src="./javascripts/lightgallery.min.js"></script>
+    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+    <script src="./javascripts/jquery.mousewheel.min.js"></script>
+    <!-- lightgallery plugins -->
+    <script src="./javascripts/lg-thumbnail.min.js"></script>
+    <script src="./javascripts/lg-fullscreen.min.js"></script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $(".owl-carousel").owlCarousel({
+            navigation: true, // Show next and prev buttons
+            pagination: false,
+            slideSpeed: 1000,
+            autoplay: true,
+            autoPlay: 2500,
+            autoplaySpeed: true,
+            paginationSpeed: 1000,
+            singleItem: true,
+            navigationText: ["<img src='images/system/left.svg' width='50' height='50'>", "<img src='images/system/right.svg' width='50' height='50'>"],
+            autoHeight: true
+                // transitionStyle: "fade"
+        });
+    });
+
+            function clickFunction(the){
+                //alert(the.getAttribute('value'));
+                document.getElementById('chooserPoster').action=location.pathname;
+                document.getElementById('language').value=the.getAttribute('value');
+                //alert(the.getAttribute('value'));
+                document.getElementById('chooserPoster').submit();
+            }
+
+
+              function languageChooserSelectionChanged(the){
+                document.getElementById('chooserPoster').action=location.pathname;
+                 //console.dir(location);
+                 
+                 document.getElementById('language').value=the.options[the.selectedIndex].value;
+                
+                document.getElementById('chooserPoster').submit();
+              }
+
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery();
+    });
+
+          /*  $(window).scroll(function(e) {
+        $('html, body').animate({
+            scrollTop: $('.container').eq(1).offset().top
+        }, 'slow');
+        $( this ).off(e);
+    });
+       */
+       
+
+    $(document).ready(function() {
+    $('.clicked').on('click', function(e) {
+        var current = $(e.target).next();
+        var show = current.hasClass('hidden');
+        $(this).css({"background-color": "#286090","margin-right":"0"}); 
+        if (show) {
+            current.hide();
+            current.removeClass('hidden');
+            current.slideDown('slow');
+            // $(this).fadeTo("slow", 0.33);
+            $(this).css({"background-color": "red","margin-right":"124px"}); 
+            $(this).text("<%=getHardCode('@close')%>");
+        } else { 
+
+            current.slideUp('slow', function() {
+                current.addClass('hidden');
+                current.slideUp('slow');
+
+            });
+            $(this).text("<%=getHardCode('@book')%>");
+            $(this).fadeTo("slow", 1);
+        }
+
+    });
+});
+    </script>
+
+
+    <script>
+    var pathName = window.location.pathname;
+
+    $('#navbar1 ul li a').each(function() {
+            console.log(pathName.substr(pathName.lastIndexOf('/') + 1));
+            //alert(pathName.substr(pathName.lastIndexOf('/') + 1));
+        var $self = $(this);
+        if ($self.attr('href') == pathName.substr(pathName.lastIndexOf('/') + 1)) {
+            $self.parent().addClass('active');
+        }else{
+            if(pathName.replace('/','').length==0 && $self.attr('href')=='/'){
+                $self.parent().addClass('active');
+            }
+        }
+    })
+    </script>
+</body>
+
+</html>

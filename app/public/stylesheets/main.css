@@ -1,0 +1,369 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    background-color:#0ff2eb;
+    margin: 0 0 135px;
+}
+
+.container-full {
+    width: 100%;
+    margin: 0 auto;
+}
+
+active{
+    background-color: #acb6ac !important;
+    font-size: 18px;
+    border-radius: 5px;
+}
+/*.container {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+*/
+.language .geo,
+.language .eng,
+.language .rus {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 22px;
+}
+
+.language .geo {
+    background: url("../images/system/Geo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.language .eng {
+    background: url("../images/system/UK.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.language .rus {
+    background: url("../images/system/Rus.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #333;
+    padding: 30px 15px;
+    text-align:center;
+}
+
+
+.navbar-default .navbar-nav>li :hover{
+    background-color: #f2f2f2 !important;
+    font-size: 18px;
+    border-radius:5px ;
+
+   /* border: none;
+    border-radius: 0px;*/
+}
+
+@media only screen and (max-width: 770px) {
+ #navbar1{
+    margin-left: 0 !important;
+ }   
+   
+}
+
+@media only screen and (max-width: 995px) {
+    .language .geo,
+    .language .eng,
+    .language .rus {
+            margin-top: 0;
+            margin-bottom: -5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .language .geo,
+    .language .eng,
+    .language .rus {
+        float: none;
+    }
+}
+
+
+/*logo*/
+
+.navbar-header .navbar-brand {
+    height: inherit;
+    padding: inherit;
+}
+
+
+/*center navigation*/
+
+.navbar,
+.navbar-default {
+    /*padding: 15px;*/
+    background-color:#fff;
+    z-index: 1;
+    width: inherit;
+    height: inherit;
+    /*opacity: 0.7;*/
+    border: none;
+    border-radius: 0px;
+}
+
+
+/*New Menu font style( gasasworebelia mobilurebostvis: fontebis zoma dasaklebia) */
+
+/*.navbar-nav {
+    
+    
+    padding-top: 13px;
+}*/
+
+#navbar1 {
+    position: relative;
+    margin-left: 61px;
+}
+
+
+.collapsed,
+.navbar-toggle {
+    margin: 22px 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    background: none;
+}
+
+.tour-thumbnail {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    border: 10px solid rgba(132, 165, 144, 0.61);
+}
+.tour-thumbnail:hover{
+border: 10px solid rgba(51, 172, 91, 0.61);}
+
+.tour-thumbnail img{
+    height: 35vh;
+}
+
+@media only screen and (max-width: 770px) {
+    .tour-thumbnail img{
+    height: 65vh;
+}
+
+}
+
+
+.trip-thumbnail img{
+    height: 35vh;
+    width:100%;
+}
+
+@media only screen and (max-width: 770px) {
+    .trip-thumbnail img{
+    height: 65vh;
+}
+
+}
+.owl-carousel {
+    position: relative;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.owl-prev {
+    left: 0;
+}
+
+.owl-next {
+    right: 0;
+}
+
+.main-tour-container {
+    position: relative;
+}
+
+.main-h2 {
+    padding: 10px 0 30px 0;
+}
+
+/*.tour-thumbnail::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background .35s ease-out;
+}
+
+.tour-thumbnail:hover::before {
+    background: rgba(0, 0, 0, .5);
+}
+
+.tour-thumbnail:hover .tour-caption-text {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.tour-thumbnail:hover .tour-caption-title {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}*/
+
+@media only screen and (max-width: 550px) {
+    .tour-thumbnail .tour-caption-text {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .tour-thumbnail .tour-caption-title {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    .tour-thumbnail {
+        position: relative;
+        border: 4px solid gray;
+    }
+    .tour-caption-title {
+        padding: 0 0 15px !important;
+    }
+    .tour-caption-content {
+        display: none;
+    }
+}
+
+.tour-caption-content,
+.tour-caption-title {
+    text-align: left;
+}
+
+.main-tour-thumbnail {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.tour-thumbnail .caption {
+    color: #fff;
+    font-style: italic;
+}
+
+.tour-caption-content {
+    font-size: 16px;
+}
+
+.tour-caption-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: white;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: -webkit-transform .35s ease-out;
+    transition: transform .35s ease-out
+}
+
+.tour-caption-title {
+    margin: 0;
+    padding: 0 0 12px;
+    -webkit-transform: translateY( -webkit-calc(-100% - 10px));
+    transform: translateY( calc(-100% - 10px));
+    transition: -webkit-transform .35s ease-out;
+    transition: transform .35s ease-out;
+}
+
+
+/*trips section*/
+
+.main-trip-container {
+    position: relative;
+}
+
+.trip-caption-text {
+    width: 97.8%;
+    position: absolute;
+    bottom: 4px;
+    z-index: 999;
+    color: #fff !important;
+    text-align: left;
+    color: white;
+    opacity: 0.6;
+    /* transparency */
+    filter: alpha(opacity=60);
+    /* IE transparency */
+    background-color: black;
+}
+
+.trip-thumbnail {
+    position: relative;
+    border: 14px solid gray;
+}
+
+@media screen and (max-width: 990px) {
+    .trip-caption-text {
+        width: 96.8%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .main-trip-container {
+        width: 100%;
+    }
+}
+
+
+/*Footer*/
+
+footer {
+    margin-top: 50px;
+    background-color: #808080;
+    bottom: 0;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 135px;
+    width: 100%;
+    overflow:hidden;
+
+}
+
+footer ul {
+    list-style-type: none;
+    display: inline-block;
+    padding: 30px 0 20px 0;
+}
+
+footer li {
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.contact-us li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}

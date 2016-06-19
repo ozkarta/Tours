@@ -1,0 +1,220 @@
+<%
+
+function getHardCode(varName){
+   if(locals.user!==undefined){
+        for(i in  locals.user.screener.hardCodes){
+        var item=locals.user.screener.hardCodes[i];
+            if(item.variableName==varName){
+                //console.dir(item);
+                //console.log('looking for '+locals.user.defaultLanguage)
+                if(locals.user.defaultLanguage==='ქართული'){
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
+                    return item.geoValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='English'){
+                    //console.log('found  inglisurshi');
+                    return item.engValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='русский'){
+                    //console.log('found rusulshi');
+                    return item.rusValue
+                    
+                }
+            }
+        }
+   }else{
+    return '';
+   }
+   
+}
+
+
+%>
+
+
+<%  //console.dir(locals.user.screener);
+
+    if(locals.user!==undefined){
+        if(locals.user.screener.tourDetailID!=='' & locals.user.screener.tourDetailID!==undefined){
+            //console.dir(locals.user.screener.tours);
+            locals.user.screener.tours.forEach(function(tour){
+            //console.dir(tour);
+            //console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+                if(tour.tourID==locals.user.screener.tourDetailID){
+                    //console.log('__________tour was found');
+
+
+                %>
+
+                <div class="tour-details">
+                    <div class="container">
+                        <div class="thumbnail col-xs-12 details-thumbnail">
+                            <img class="tour-img col-xs-5 col-md-3" src="<%=tour.descriptionImageURL %>">
+                            <div class="caption about">
+                                <h3><%=tour.tourName %></h3>
+                                <p><span class="bolderer"></span> 
+                                    <%-tour.aboutPlaceShort %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about-tour">
+                            <div class="simple-details col-sm-5 col-xs-12">
+                                <h4><%=tour.tourDetailShortHeaderName %></h4>
+                                <%-tour.tourDetailShort %>
+
+                                <%
+                                    if (tour.galery!==undefined){
+                                %>
+                                <h3 class="photo-album"><span class="glyphicon glyphicon-picture"></span><%=getHardCode('@album')%></h3>
+                                <div class="album-in-tour-details col-xs-12">
+                                    <a href="galeryDetail?galeryID=<%=tour.galery.galeryID%>">
+                                        <div class="col-sm-9 col-sm-offset-1 min-size det-alb-backg">
+                                            <img src="<%=tour.galery.imageURL %>" alt="..." class="img-thumbnail">
+                                            <h4 class="album-title col-xs-12 text-center"><%=tour.tourName%></h4>
+                                        </div>
+                                    </a>
+                                </div>
+                                <%}%>
+                            </div>
+                            <div class="main-details col-sm-7 col-xs-12">
+                                <h4><%=tour.tourDetailLongHeaderName %></h4>
+                               <div class="tour-directions">
+                                <%-tour.tourDetailLong %>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="book col-xs-12"><%=getHardCode('@bookTheTour')%></h3>
+                        <div class='trip-form col-xs-12'>
+                            <form method="POST" action="" onsubmit="return myFunction(this)">
+                                <div class="row">
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@fname')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@fname')%>" name="fname">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@lname')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@lname')%>" name="lname">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@birthDate')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@birthDate')%>" name="bdate">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@idNumber')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@idNumber')%>" name="idNumber">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@mail')%></label>
+                                        <input type="email" class="form-control" id="exampleInputPassword1" required="true" placeholder="<%=getHardCode('@mail')%>" name="mail">
+                                    </div>
+                                    <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputFile"><%=getHardCode('@cellNumber')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@cellNumber')%>" name="cellNumber">
+                                    </div>
+                                     <div class="col-md-4 inputContainer">
+                                        <label for="exampleInputPassword1"><%=getHardCode('@number')%></label>
+                                        <input type="text" class="form-control" required="true" placeholder="<%=getHardCode('@number')%>" name="quantity">
+                                     </div>
+                                     <input type="hidden" name="tourID" value="<%=tour.tourID%>"/>
+                                     <input type="hidden" name="tourName" value="<%=tour.tourName%>"/>
+                                </div>
+                                     <succ style="display:none"><%=getHardCode('@success')%></succ>
+                                        
+                                     <err style="display:none"><%=getHardCode('@error')%></err>
+
+                                <button type="submit" class="btn btn-success success submitForm" ><%=getHardCode('@book')%></button>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+
+            <%
+                }
+            });
+        }
+    }
+%>
+
+
+
+<script type="text/javascript">
+    
+
+    function myFunction(form){
+       
+       // alert('clicked');
+        var elem=$(form);
+        //alert(elem);
+        //console.dir(elem);
+        //var form=$(elem).parents('form:first');
+        //var form=elem;
+         elem.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+          elem.find("err").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:none')
+                        });
+           // if(!form.checkValidity()){
+           //      return false;
+           //   }
+        //console.dir(form);
+        //form.validate();
+        var jsonToPost='{'
+        var i=0;
+        var responseJSON=undefined;
+        elem.find("input").each(function(){
+            //console.log($(this).attr('name')+'_____'+$(this).val());
+            //console.log();
+            var mark=','
+            if(i==0){
+                mark='';
+            }
+            jsonToPost=jsonToPost+mark+'\"'+$(this).attr('name')+'\"'+':'+'\"'+$(this).val()+'\"';
+            //console.log(jsonToPost);
+
+            i=i+1;
+        })
+        jsonToPost=jsonToPost+'}';
+        //console.log(jsonToPost);
+        //alert(document.location.origin);
+        //alert(window.location.hostname)
+
+        xhr = new XMLHttpRequest();
+        var url = document.location.origin+'/bookTour';
+        xhr.open("POST", url, true);
+
+        xhr.setRequestHeader("Content-type", "application/json");
+        xhr.onreadystatechange = function () { 
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                responseJSON = JSON.parse(xhr.responseText);  
+                if(responseJSON!==undefined){
+                    if(responseJSON.status=='1'){
+                        //alert('success');
+                        elem.find("succ").each(function(){
+                            //$(this).html('success')
+                            $(this).attr('style','display:inline')
+                        });
+                    }else{
+                        //alert('span');
+                        elem.find("err").each(function(){
+                            //$(this).html('error')
+                            $(this).attr('style','display:inline')
+                        });
+                    }
+                }              
+            }
+        }
+        xhr.send(jsonToPost);
+
+        
+        return false;
+    }
+
+
+</script>
+

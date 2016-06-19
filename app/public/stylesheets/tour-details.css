@@ -1,0 +1,155 @@
+
+.container a {
+    text-decoration: none;
+}
+
+
+/*.tour-details-background {
+    background-image: url("../images/system/svaneti1.jpg");
+    background-size: cover;
+    background-position: 0% 85%;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+}*/
+
+.tour-details {
+    margin-top: 50px;
+
+}
+
+.details-thumbnail {
+    background-color: #f6f7f8;
+    text-align: left;
+}
+
+.tour-img {
+    padding: 1px;
+    padding-right: 15px;
+}
+
+.about {
+    margin-top: -10px;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 550px) {
+    .tour-img {
+        width: 100%;
+        padding-right: 1px;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .tour-img {
+        min-width: 300px;
+    }
+}
+
+.bolderer {
+    color: #444;
+    font-weight: 600;
+}
+
+.about-tour h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.tour-details .simple-details {
+    border-right: 1px dotted #a5a4a5;
+}
+
+.photo-album{
+    text-align: center;
+}
+.photo-album span{
+    margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .tour-details .simple-details {
+        border-right: none;
+    }
+}
+
+.tour-details .simple-details {
+    /*border-right:1px dotted #545; */
+    text-align: left;
+    word-break: break-all;
+}
+
+
+.tour-details .simple-details h6{
+        font-weight: bold;
+    display: inline;
+    font-size: 15px;
+}
+.tour-details .simple-details p{
+    display: inline;
+}
+.tour-details .simple-details h6:before{
+    content:"\a";
+    white-space: pre;
+}
+
+.album-in-tour-details {
+    margin-top: 10px;
+}
+
+.det-alb-backg {}
+
+.det-alb-backg:hover {
+    background-color: #e9e9e9;
+}
+succ{
+    font-size: 18px;
+    position: relative;
+    top: 25px;
+    color:#449d44;
+}
+err{
+    font-size: 18px;
+    position: relative;
+    top: 25px;
+    color:red;
+}
+.book {
+    text-align: center;
+    color: #131;
+    margin-top: 40px;
+}
+
+.tour-directions{
+    text-align: left;
+}
+
+.tour-directions dt{
+    text-align: center;
+}
+}
+
+
+/*----------------------------------------------*/
+
+.trip-form {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+.trip-form button {
+    padding-top: 8px;
+    /*float: right;*/
+}
+
+.form-group:last-of-type {
+    margin-bottom: 40px;
+}
+
+.container form .submitForm {
+    margin-top: 20px;
+    float: right;
+}
+
+.container form .inputContainer {
+    margin-top: 30px;
+}
+

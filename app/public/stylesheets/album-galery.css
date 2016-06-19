@@ -1,0 +1,32 @@
+
+#lightgallery img {
+    padding: 1px !important;
+    min-width: 220px;
+    margin: 0 auto;
+    border-radius: 3px;
+    height: 20vh;
+}
+@media only screen and (max-width: 770px) {
+    #lightgallery img {
+        height: 35vh;
+    }
+}
+
+#lightgallery img:hover {
+    transform: scale(0.95);
+}
+
+@media only screen and (max-width: 486px) {
+    #lightgallery img {
+        width: 100%;
+    }
+}
+
+.album-galery-margin {
+     
+     height:5%;
+}
+
+
+/*Footer*/
+

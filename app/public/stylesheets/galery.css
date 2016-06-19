@@ -1,0 +1,41 @@
+
+.galery{
+    margin-top:70px;
+    height: 70vh;
+}
+
+.galery img {
+    padding: 5px 8px;
+    height: 28vh;
+    width: 48vh;
+}
+
+.album-title {
+    /*text-align: center;*/
+    color: #505;
+    font-weight: 400;
+    padding: 0 1%;
+}
+
+.galery-album {
+    border-bottom: 2px dashed #aaa;
+    margin: 25px 0px;
+    /*width:48vh;*/
+    text-align:center;
+}
+
+.galery-album:hover {
+    background-color: #eee;
+    border-bottom: 2px solid #fff;
+}
+
+.min-size {
+    min-width: 200px;
+}
+
+@media only screen and (max-width: 770px) {
+    .galery h4 {
+        font-size: 15px;
+    }
+}
+

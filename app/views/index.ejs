@@ -1,0 +1,124 @@
+<%
+
+function getHardCode(varName){
+   if(locals.user!==undefined){
+        for(i in  locals.user.screener.hardCodes){
+        var item=locals.user.screener.hardCodes[i];
+            if(item.variableName==varName){
+                //console.dir(item);
+                //console.log('looking for '+locals.user.defaultLanguage)
+                if(locals.user.defaultLanguage==='ქართული'){
+                    //console.log('found  kartulshi')
+                    //console.log(item.geoValue);
+                    return item.geoValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='English'){
+                    //console.log('found  inglisurshi');
+                    return item.engValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='русский'){
+                    //console.log('found rusulshi');
+                    return item.rusValue
+                    
+                }
+            }
+        }
+   }else{
+    return '';
+   }
+   
+}
+
+
+%>
+
+
+   <!-- slider -->
+        <div class="slider-wrapper" style="height:80vh;" >
+            <div class="owl-carousel">
+                <div class='item'> <img src="images/system/img.jpg" style="width:100%; height:80vh;"> </div>
+                <div class='item'> <img src="images/system/img1.jpg" style="width:100%; height:80vh;"> </div>
+                <div class='item'> <img src="images/system/img2.jpg" style="width:100%; height:80vh;"> </div>
+                <div class='item'> <img src="images/system/img3.jpg" style="width:100%; height:80vh;"> </div>
+                <div class='item'> <img src="images/system/img4.jpg" style="width:100%; height:80vh;"> </div>
+                <div class='item'> <img src="images/system/img5.jpg" style="width:100%; height:80vh;"> </div>
+            </div>
+        </div>
+        <!-- tours -->
+        <%  if(locals.user!==undefined){
+              
+        %>
+        <div class="container">
+            <h2 class="main-h2"><%= getHardCode('@tours')%></h2>
+            <div class="row">
+                
+                    <%  locals.user.screener.tours.forEach(function(item){
+                            %>
+                                 <div class="col-sm-4 col-md-4 col-xs-12 main-tour-container">
+                                    <a href="tourDetails?tourId=<%=item.tourID%>" >
+                                        <div class="thumbnail tour-thumbnail">
+                                            <img src="<%=item.descriptionImageURL %>" class="img-responsive main-tour-thumbnail"  alt="Generic placeholder thumbnail">
+                                            <div class="caption tour-caption-text">
+                                                <h3 class="tour-caption-title"><%=item.tourName %></h3>
+                                                <!-- <p class="tour-caption-content"><%=item.tourDetailShortHeaderName%></p> -->
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <%
+                        })
+                }
+                %>
+
+                
+            </div>
+        </div>
+        <!-- trips -->
+        <div class="container">
+            <h2 class="main-h2"><%=getHardCode('@races')  %></h2>
+            <br>
+            <div class="row">
+                <%
+                    if (locals.user!== undefined){
+                        var i =0;
+                        locals.user.screener.races.forEach(function(item){
+                        
+                            if(i==1){
+                %>
+                             <div class="col-sm-4  col-xs-12 main-trip-container">
+                                <div class="thumbnail trip-thumbnail">
+                                    <img src="<%=item.imageURL %>" class="img-responsive" alt="Generic placeholder thumbnail">
+                                    <div class="caption trip-caption-text">
+                                        <h3><%=item.raceName %></h3>
+                                        <p><%=item.raceDescription %></p>
+                                    </div>
+                                </div>
+                            </div>
+                <%
+                            }else{
+
+                            
+                %>
+                            <div class="col-sm-4 col-sm-offset-2 col-xs-12 main-trip-container">
+                                <div class="thumbnail trip-thumbnail">
+                                    <img src="<%=item.imageURL %>" class="img-responsive" alt="Generic placeholder thumbnail">
+                                    <div class="caption trip-caption-text">
+                                        <h3><%=item.raceName %></h3>
+                                        <p><%=item.raceDescription %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }i=i+1;
+                        })
+                    }
+                %>
+
+
+
+               
+               
+               
+            </div>
+        </div>

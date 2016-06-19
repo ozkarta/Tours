@@ -1,0 +1,53 @@
+
+/*
+.about-background {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/system/main.jpg");
+    background-size: cover;
+    background-position: 0% 85%;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+}*/
+
+/*Text Section*/
+.container.opa{
+    background-color:#fff !important; 
+    width:100% !important;
+    min-height:78vh !important;
+}
+
+.about-text-container {
+    margin: 25px 0;
+}
+
+
+/*Footer*/
+
+.container a {
+    text-decoration: none;
+}
+
+
+/*Footer*/
+
+.container .about-image img {
+    float: left;
+}
+
+@media only screen and (max-width: 1208px) {
+    .container .about-image img {
+        width: 400px;
+        height: 400px;
+        float: none
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    
+.container .about-image img{
+    width:200px;
+    height:200px;
+    float: none
+}
+}
+
+

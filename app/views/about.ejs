@@ -1,0 +1,51 @@
+<%
+
+function getHardCode(varName){
+   if(locals.user!==undefined){
+        for(i in  locals.user.screener.hardCodes){
+        var item=locals.user.screener.hardCodes[i];
+            if(item.variableName==varName){
+                //console.dir(item);
+                console.log('looking for '+locals.user.defaultLanguage)
+                if(locals.user.defaultLanguage==='ქართული'){
+                    console.log('found  kartulshi')
+                    console.log(item.geoValue);
+                    return item.geoValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='English'){
+                    console.log('found  inglisurshi');
+                    return item.engValue;
+                    
+                }
+                if(locals.user.defaultLanguage=='русский'){
+                    console.log('found rusulshi');
+                    return item.rusValue
+                    
+                }
+            }
+        }
+   }else{
+    return '';
+   }
+   
+}
+
+
+%>
+
+<div class="container opa">
+        <div class="col-xs-12 col-md-6 about-image">
+            <img src="./images/system/logo.png" width="550" height"550">
+        </div>
+        <div class="col-xs-12 col-md-6 about-text">
+            <h2><%=getHardCode('@aboutUsTitle')%></h2>
+            <div class="about-text-container">
+                <%-getHardCode('@aboutUsText1')%>
+                <br/><br/><br/>
+                <%-getHardCode('@aboutUsText2')%>
+            </div>
+
+        </div>
+    </div>
+   
